@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('gameApp', [
     'ngRoute',
+    'ngAnimate',
     'gameApp.view1',
     'gameApp.view2',
     'gameApp.test',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gameApp.login', ['ngRoute'])
+angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/login', {
@@ -9,7 +9,7 @@ angular.module('gameApp.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', function($scope, UserService) {
+.controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', 'ui.bootstrap', function($scope, UserService) {
 
   $scope.login = function(){
 

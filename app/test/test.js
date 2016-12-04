@@ -1,11 +1,9 @@
 'use strict';
 
-angular.module('gameApp.test', ['ngRoute'])
-
-
-
+angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
     .controller('TestCtrl', ['$scope', 'TestService',  function($scope, TestService) {
 
+        $scope.isCollapsed = false;
         $scope.categories = ["Adjectives or adverb", "Articles", "Imperative"];
         $scope.tests = [];
 
@@ -34,5 +32,11 @@ angular.module('gameApp.test', ['ngRoute'])
                 });
             });
         }
+
+        $scope.status = {
+            isCustomHeaderOpen: false,
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
 
     }]);

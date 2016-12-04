@@ -1,5 +1,9 @@
 /* app css stylesheet */
+html body
+{
+  font-family: 'Noto Sans', sans-serif;
 
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

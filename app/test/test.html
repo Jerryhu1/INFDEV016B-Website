@@ -2,9 +2,16 @@
 
     <div class="container">
         <div class="categories-container">
+
+            <uib-accordion close-others="oneAtATime">
+                <div uib-accordion-group class="panel-default" heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                    This content is straight in the template.
+                </div>
+            </uib-accordion>
+
             <ul class="categories-list" ng-repeat="category in categories">
                 <li ng-click="getTestsByCategory(category)">{{category}}</li>
-                <ul class="testList" ng-repeat="test in tests">
+                <ul class="te   stList" ng-repeat="test in tests">
                     <li><a href="#/test/{test.id}">{{test.name}}</a></li>
 
                 </ul>
