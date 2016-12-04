@@ -1,0 +1,75 @@
+[
+    {
+         "id" : 1,
+         "name" : "Adjective or adverb - Exercise 1",
+         "category" : "Adjective or adverb",
+         "exercises" : [
+                {
+                    "id" : 1,
+                    "text" : "He [blank] reads a book",
+                    "word" : "quick",
+                    "options" : [
+                        {
+                           "id" : 1,
+                           "text" : "quickly"
+                        },
+                        {
+                           "id" : 2,
+                           "text" : "quick"
+                        },
+                        {
+                           "id" : 3,
+                           "text" : "fast"
+                        },
+                        {
+                           "id" : 4,
+                           "text" : "fastly"
+                        }
+                    ]
+                },
+                {
+                    "id" : 2,
+                    "text" : "Mandy is a [blank] girl"
+                }
+
+        ]
+    },
+    {
+         "id" : 1,
+         "name" : "Adjective or adverb - Exercise 1",
+         "category" : "Adjective or adverb",
+         "exercises" : [
+                {
+                    "id" : 1,
+                    "text" : "He [blank] reads a book",
+                    "word" : "quick",
+                    "options" : [
+                        {
+                           "id" : 1,
+                           "text" : "quickly"
+                        },
+                        {
+                           "id" : 2,
+                           "text" : "quick"
+                        },
+                        {
+                           "id" : 3,
+                           "text" : "fast"
+                        },
+                        {
+                           "id" : 4,
+                           "text" : "fastly"
+                        }
+                    ]
+                },
+                {
+                    "id" : 2,
+                    "text" : "Mandy is a [blank] girl"
+                }
+
+        ]
+}
+]
+
+
+

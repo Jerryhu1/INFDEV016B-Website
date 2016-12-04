@@ -5,10 +5,10 @@ angular.module('gameApp', [
     'ngRoute',
     'gameApp.view1',
     'gameApp.view2',
-    'gameApp.testView',
+    'gameApp.test',
     'user.services',
     'test.services',
-    'gameApp.loginView',
+    'gameApp.login',
     'gameApp.version'
 
 
@@ -16,13 +16,13 @@ angular.module('gameApp', [
 config(['$locationProvider', '$routeProvider', '$httpProvider', function($locationProvider, $routeProvider, $httpProvider) {
   $locationProvider.hashPrefix('!');
     $routeProvider
-         .when('/testview', {
-                templateUrl: 'testview/testview.html',
-                controller: 'TestViewCtrl'
+         .when('/test', {
+                templateUrl: 'test/test.html',
+                controller: 'TestCtrl'
             })
-        .when('/loginview', {
-        templateUrl: 'loginView/loginView.html',
-        controller: 'LoginViewCtrl'
+        .when('/login', {
+        templateUrl: 'login/login.html',
+        controller: 'LoginCtrl'
     })
 
         .otherwise({redirectTo: '/view1'});

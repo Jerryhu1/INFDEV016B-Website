@@ -7,7 +7,8 @@ angular.module('test.services', [])
             var testService = {};
 
             testService.getAllTests = function(){
-                return $http.get('http://localhost:3300/tests');
+                return  $http.get('test/tests.json');
+                //return $http.get('http://localhost:3300/tests');
             }
 
             return testService;
