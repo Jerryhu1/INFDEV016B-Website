@@ -3,9 +3,9 @@
     <div class="container">
         <div class="categories-container">
             <ul class="categories-list" ng-repeat="category in categories">
-                <li ng-click="getAllTests(category)">{{category}}</li>
+                <li ng-click="getTestsByCategory(category)">{{category}}</li>
                 <ul class="testList" ng-repeat="test in tests">
-                    <li><a href="#/test/{test.id}">{{test.difficulty}}</a></li>
+                    <li><a href="#/test/{test.id}">{{test.name}}</a></li>
 
                 </ul>
             </ul>
