@@ -2,13 +2,6 @@
 
 angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/login', {
-    templateUrl: 'login/login.html',
-    controller: 'LoginCtrl'
-  });
-}])
-
 .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', 'ui.bootstrap', function($scope, UserService) {
 
   $scope.login = function(){

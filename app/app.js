@@ -6,6 +6,7 @@ angular.module('gameApp', [
     'ngAnimate',
     'gameApp.view1',
     'gameApp.view2',
+    'gameApp.tests',
     'gameApp.test',
     'user.services',
     'test.services',
@@ -17,14 +18,19 @@ angular.module('gameApp', [
 config(['$locationProvider', '$routeProvider', '$httpProvider', function($locationProvider, $routeProvider, $httpProvider) {
   $locationProvider.hashPrefix('!');
     $routeProvider
-         .when('/test', {
-                templateUrl: 'test/test.html',
-                controller: 'TestCtrl'
+         .when('/tests', {
+                templateUrl: 'test/tests.html',
+                controller: 'TestsCtrl'
             })
         .when('/login', {
         templateUrl: 'login/login.html',
         controller: 'LoginCtrl'
-    })
+        })
+        .when('/tests/:testId',{
+                templateUrl: 'test/test.html',
+                controller: 'TestCtrl'
+        })
+
 
         .otherwise({redirectTo: '/view1'});
 
