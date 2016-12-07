@@ -8,7 +8,7 @@ describe('gameApp.login module', function() {
 
     it('should ....', inject(function($controller) {
       //spec body
-      var loginViewCtrl = $controller('View1Ctrl');
+      var loginViewCtrl = $controller('LoginCtrl');
       expect(loginViewCtrl).toBeDefined();
     }));
 
