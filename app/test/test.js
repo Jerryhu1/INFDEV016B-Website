@@ -18,10 +18,16 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
             {
                 angular.forEach($scope.test.exercises, function(item){
 
+
                     $scope.exercises.push(item);
                 })
-            }
+            };
 
+            $scope.exercises.filter('split', function()){
+
+
+
+            }
 
     }
 ]);

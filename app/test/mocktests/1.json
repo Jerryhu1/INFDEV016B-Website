@@ -6,7 +6,7 @@
   "exercises" : [
     {
       "id" : 1,
-      "text" : "He [blank] reads a book",
+      "text" : "He ____ reads a book",
       "word" : "quick",
       "options" : [
         {
@@ -29,7 +29,8 @@
     },
     {
       "id" : 2,
-      "text" : "Mandy is a [blank] girl"
+      "text" : "Mandy is a ___ girl",
+      "word" : "pretty"
     }
 
   ]

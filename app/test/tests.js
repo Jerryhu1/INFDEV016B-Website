@@ -11,10 +11,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
         {
             TestService.getAllTests().success(function(result){
 
-                angular.forEach(result, function(){
-
-                   $scope.tests.push(result);
-                })
+                    $scope.tests = result;
             });
         };
 
@@ -40,5 +37,6 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
             isFirstOpen: true,
             isFirstDisabled: false
         };
+
 
     }]);

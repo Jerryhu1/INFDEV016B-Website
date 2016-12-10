@@ -12,7 +12,7 @@ angular.module('test.services', [])
             };
 
             testService.getTest = function(id){
-                return $http.get('test/'+ id +'.json')
+                return $http.get('test/mocktests/'+ id +'.json')
             };
 
 

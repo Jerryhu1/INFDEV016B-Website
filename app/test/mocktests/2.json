@@ -1,0 +1,37 @@
+
+{
+  "id" : 2,
+  "name" : "Adjective or adverb - Exercise 2",
+  "category" : "Adjectives or adverb",
+  "exercises" : [
+    {
+      "id" : 1,
+      "text" : "He ___ reads a book",
+      "word" : "quick",
+      "options" : [
+        {
+          "id" : 1,
+          "text" : "quickly"
+        },
+        {
+          "id" : 2,
+          "text" : "quick"
+        },
+        {
+          "id" : 3,
+          "text" : "fast"
+        },
+        {
+          "id" : 4,
+          "text" : "fastly"
+        }
+      ]
+    },
+    {
+      "id" : 2,
+      "text" : "Mandy is a ____ girl",
+      "word" : "pretty"
+    }
+
+  ]
+}
