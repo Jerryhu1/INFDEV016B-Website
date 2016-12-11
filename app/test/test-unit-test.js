@@ -42,6 +42,4 @@ describe('Controller: TestsCtrl', function () {
 
     })
 
-
-
 });
