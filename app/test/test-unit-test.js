@@ -2,26 +2,46 @@
 
 describe('Controller: TestsCtrl', function () {
 
+
     // load the controller's module
-    beforeEach(module('gameApp'));
+    beforeEach(function() {
 
-    var TestsCtrl,
-        scope;
+        module('gameApp.tests');
 
-    // Initialize the controller and a mock scope
-    beforeEach(inject(function ($controller, $rootScope) {
-        scope = $rootScope.$new();
-        TestsCtrl = $controller('TestsCtrl', {
-            $scope: scope
+        module(function($provide){
+            $provide.service('TestService', TestServices);
+        });
+
+        inject(function($injector){
+            TestServices = $injector.get('TestServices');
+        })
+    });
+
+
+
+    describe('TestsCtrl', function() {
+        var ctrl, scope;
+        beforeEach(inject(function ($controller, $rootScope) {
+
+            scope = $rootScope.$new();
+            ctrl = $controller('TestsCtrl', {
+                $scope: scope
+            });
+        }));
+
+        it('should create a tests list with 2 tests',
+            function(){
+                expect(ctrl.scope.tests).toBe(2);
+                 console.log("test1");
+            });
+
+        it('should uppercase correctly', function(){
+            expect(testCont.upper('lol')).toEqual('LOL');
 
         });
-    }));
 
-    it('should attach a list of awesomeThings to the scope', function () {
-        // Change this line
-        expect(scope.awesomeThings.length).toBe(3);
+    })
 
-        // To this
-        expect(scope.awesomeThings.length).toBe(4);
-    });
+
+
 });

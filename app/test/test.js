@@ -23,11 +23,10 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
                 })
             };
 
-            $scope.exercises.filter('split', function()){
+            $scope.exercises.filter('split', function(){
 
 
-
-            }
+            })
 
     }
 ]);
