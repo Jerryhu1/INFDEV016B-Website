@@ -38,10 +38,4 @@ config(['$locationProvider', '$routeProvider', '$httpProvider', function($locati
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-angular.module('gameApp', [])
-    .filter('split', function() {
-        return function(input, splitChar, splitIndex) {
-            // do some bounds checking here to ensure it has that index
-            return input.split(splitChar)[splitIndex];
-        }
-    });
+

@@ -4,7 +4,7 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
     .controller('TestCtrl', ['$scope', 'TestService', '$routeParams',
         function($scope, TestService, $routeParams) {
 
-        $scope.exercises = [];
+            $scope.exercises = [];
 
             TestService.getTest($routeParams.testId).success(function(result){
 
@@ -23,11 +23,6 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
                 })
             };
 
-            $scope.exercises.filter('split', function()){
 
-
-
-            }
-
-    }
-]);
+        }
+    ]);
