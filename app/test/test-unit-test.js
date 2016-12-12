@@ -1,45 +1,54 @@
 'use strict';
 
-describe('Controller: TestsCtrl', function () {
+describe('TestsCtrl', function () {
 
+    var ctrl, scope, TestServices, constants, rootScope;
 
-    // load the controller's module
-    beforeEach(function() {
-
+    beforeEach(function(){
         module('gameApp.tests');
-
-        module(function($provide){
-            $provide.service('TestService', TestServices);
-        });
-
-        inject(function($injector){
-            TestServices = $injector.get('TestServices');
-        })
+        module('test.services');
     });
 
+    beforeEach(angular.mock.module('test.services'));
 
 
-    describe('TestsCtrl', function() {
-        var ctrl, scope;
-        beforeEach(inject(function ($controller, $rootScope) {
 
-            scope = $rootScope.$new();
-            ctrl = $controller('TestsCtrl', {
-                $scope: scope
-            });
-        }));
+    beforeEach(inject(function (_TestServices_, $controller, $rootScope) {
 
-        it('should create a tests list with 2 tests',
-            function(){
-                expect(ctrl.scope.tests).toBe(2);
-                 console.log("test1");
-            });
 
-        it('should uppercase correctly', function(){
-            expect(testCont.upper('lol')).toEqual('LOL');
-
+        scope = $rootScope.$new();
+        ctrl = $controller('TestsCtrl', {
+            $scope: scope
         });
 
+        TestServices = _TestServices_;
+    }));
+
+
+
+    it('should have a valid controller',
+        function(){
+            expect(ctrl).toBeDefined();
+    });
+
+    it('should have a valid scope', function(){
+        expect(scope).toBeDefined();
+    });
+
+    it('should have a valid TestService', function(){
+       expect(TestServices).toBeDefined();
+    });
+    it('should create a list with 3 items', function(){
+
+        var tests = ['a', 'b'];
+        scope.tests = tests;
+        expect(scope.tests).toBe(2);
     })
+
+    describe('.getTest()', function(){
+        expect(TestServices.getTest(1)).toBeDefined();
+    })
+
+
 
 });
