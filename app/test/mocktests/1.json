@@ -25,12 +25,14 @@
           "id" : 4,
           "text" : "fastly"
         }
-      ]
+      ],
+      "answer" : "quickly"
     },
     {
       "id" : 2,
       "text" : "Mandy is a ___ girl",
-      "word" : "pretty"
+      "word" : "pretty",
+      "answer" : "pretty"
     }
 
   ]

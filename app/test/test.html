@@ -1,10 +1,15 @@
 <div ng-controller="TestCtrl as testCtrl"  class="container" ng-init="getTests()">
 
     <div class="container">
-        <div class="test-container" ng-repeat="exercise in exercises">
-            <ul class="exercise-list">
-                <li class="exercise">{{exercise.text}}  ({{exercise.word}})</li>
-            </ul>
-        </div>
+        <form name="exercise-form">
+            <div class="test-container" ng-repeat="exercise in exercises">
+                <ul class="exercise-list">
+                    <li class="exercise">{{exercise.text}}  ({{exercise.word}})
+                        <input type="text"  ng-model="answers[exercise.id]"></li>
+                </ul>
+`
+            </div>
+            <button type="submit" ng-click="submitAnswers()">Submit</button>
+        </form>
     </div>
 </div>
