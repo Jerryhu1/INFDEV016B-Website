@@ -43,7 +43,7 @@ describe('TestsCtrl', function () {
         var tests = ['a', 'b'];
         scope.tests = tests;
         expect(scope.tests).toBe(2);
-    })
+    });
 
     describe('.getTest()', function(){
         expect(TestServices.getTest(1)).toBeDefined();
