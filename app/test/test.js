@@ -42,6 +42,9 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
                     {
                         console.log('correct');
                     }
+                    else{
+                        console.log('incorrect');
+                    }
                 }
 
             }
