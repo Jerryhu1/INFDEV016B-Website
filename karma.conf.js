@@ -5,16 +5,6 @@ module.exports = function(config) {
     basePath: '',
 
     files: [
-<<<<<<< HEAD
-      './bower_components/angular/angular.js',
-      './bower_components/angular-route/angular-route.js',
-      './bower_components/angular-mocks/angular-mocks.js',
-      './assets/ui-bootstrap-tpls-2.3.0.min.js',
-    /*    './services/TestServices.js',
-        './test/tests.js',
-        'app.js',
-        './test/test-unit-test.js'*/
-=======
       'app/bower_components/angular/angular.js',
         '/node-modules/*/base.js',
       'app/bower_components/angular-route/angular-route.js',
@@ -26,7 +16,6 @@ module.exports = function(config) {
         'app/unit-tests/login-test.js',
         'app/app.js'
 
->>>>>>> 8338d76b9479c6da163350af217c4a9d99195ff4
     ],
 
     autoWatch: true,
