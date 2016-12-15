@@ -1,22 +1,22 @@
-var gameApp = angular.module('test.services', ['ngResource']);
+'use strict';
 
 angular.module('test.services', [])
     .factory('TestService', ['$http',
         function($http, $rootScope) {
 
-            var testService = {};
+            var TestService = {};
 
-            testService.getAllTests = function(){
+            TestService.getAllTests = function(){
                 return  $http.get('test/tests.json');
                 //return $http.get('http://localhost:3300/tests');
             };
 
-            testService.getTest = function(id){
+            TestService.getTest = function(id){
                 return $http.get('test/mocktests/'+ id +'.json')
             };
 
 
 
-            return testService;
+            return TestService;
         }
     ]);
