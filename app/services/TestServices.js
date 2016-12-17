@@ -15,8 +15,6 @@ angular.module('test.services', [])
                 return $http.get('test/mocktests/'+ id +'.json')
             };
 
-
-
             return TestService;
         }
     ]);
