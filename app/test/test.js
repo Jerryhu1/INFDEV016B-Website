@@ -8,13 +8,9 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
         $scope.answers = [];
         $scope.maxScore;
         $scope.score;
-        var scope = $scope;
 
             TestService.getTest($routeParams.testId).success(function(result){
-
-
                 $scope.test = result;
-
                 exercisesToList();
             });
 
@@ -22,41 +18,30 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
             {
                 angular.forEach($scope.test.exercises, function(item){
 
-
                     $scope.exercises.push(item);
-
                 });
                 $scope.maxScore = $scope.exercises.length;
 
-
             };
 
-            $scope.submitAnswers = function()
+            $scope.submitAnswers = function(){
+
+                $scope.score = $scope.calculateScore($scope.exercises, $scope.answers);
+            };
+
+            $scope.calculateScore = function(exercises, answers)
             {
-
-                $scope.score = 0;
-                console.log($scope.exercises);
-                console.log($scope.answers);
-                for(var i=0; i<$scope.exercises.length; i++)
+                var score = 0;
+                for(var i=0; i<exercises.length; i++)
                 {
-
-                    var exerciseAnswer = $scope.exercises[i].answer;
-                    var givenAnswer = $scope.answers[i+1];
-                    console.log(exerciseAnswer);
-                    console.log(givenAnswer);
+                    var exerciseAnswer = exercises[i].answer;
+                    var givenAnswer = answers[i];
                     if(exerciseAnswer == givenAnswer)
                     {
-                        console.log('correct');
-                        $scope.score++;
-                    }
-                    else{
-                        console.log('incorrect');
+                        score++;
                     }
                 }
-
-
-
-
+                return score;
             }
 
     }
