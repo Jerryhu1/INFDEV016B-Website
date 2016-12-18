@@ -12,8 +12,8 @@ module.exports = function(config) {
             'app/assets/ui-bootstrap-tpls-2.3.0.min.js',
             'app/services/TestServices.js',
             'app/test/test.js',
-            'app/unit-tests/test-unit-test.js',
-            'app/unit-tests/login-test.js',
+            './unit-tests/test-unit-test.js',
+            './unit-tests/login-test.js',
             'app/app.js'
 
         ],

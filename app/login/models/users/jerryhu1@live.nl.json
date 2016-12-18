@@ -2,6 +2,7 @@
   "email" : "jerryhu1@live.nl",
   "name" : "Jerry",
   "lastName" : "Hu",
+  "password" : "test",
   "completedTests" : [
       {
         "testId" : 1,

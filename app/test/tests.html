@@ -1,11 +1,13 @@
 <div ng-controller="TestsCtrl as testsCtrl"  class="container" ng-init="getAllTests()">
-
+    <h2>Tests</h2>
     <div class="container">
         <div class="categories-container">
             <uib-accordion close-others="oneAtATime">
                 <div uib-accordion-group class="panel-default" heading="Adjectives or adverb" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-                    <ul class="testList" ng-repeat="test in tests">
-                            <li><a ng-href="#!/tests/{{test.id}}">{{test.name}}</a></li>
+                    <ul class="testList" >
+                            <li ng-repeat="test in tests">
+                                <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
+                            </li>
                     </ul>
                 </div>
             </uib-accordion>
