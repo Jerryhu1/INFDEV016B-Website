@@ -5,79 +5,61 @@
   "category" : "Adjectives or adverb",
   "exercises" : [
     {
-      "id" : 1,
+      "id" : 0,
       "text" : "He ____ reads a book",
       "word" : "quick",
-      "options" : [
-        {
-          "id" : 1,
-          "text" : "quickly"
-        },
-        {
-          "id" : 2,
-          "text" : "quick"
-        },
-        {
-          "id" : 3,
-          "text" : "fast"
-        },
-        {
-          "id" : 4,
-          "text" : "fastly"
-        }
-      ],
       "answer" : "quickly"
     },
     {
-      "id" : 2,
+      "id" : 1,
       "text" : "Mandy is a ___ girl",
       "word" : "pretty",
       "answer" : "pretty"
     },
     {
-      "id" : 3,
+      "id" : 2,
       "text" : "The class is ___ loud today",
       "word" : "terrible",
       "answer" : "terribly"
     },
     {
-      "id" : 4,
+      "id" : 3,
       "text" : "Max is a ___ singer",
       "word" : "good",
       "answer" : "good"
     },
     {
-      "id" : 5,
+      "id" : 4,
       "text" : "It's a ___ day today",
       "word" : "terrible",
       "answer" : "terrible"
     },
     {
-      "id" : 6,
+      "id" : 5,
       "text" : "She sings the song ___",
       "word" : "good",
       "answer" : "well"
     },
     {
-      "id" : 7,
+      "id" : 6,
       "text" : "He is a ___ driver",
       "word" : "careful",
       "answer" : "careful"
     },
     {
-      "id" : 8,
+      "id" : 7,
       "text" : "He drives the car ___",
       "word" : "careful",
       "answer" : "carefully"
     },
     {
-      "id" : 9,
+      "id" : 8,
       "text" : "You can ___ open this tin",
       "word" : "easy",
       "answer" : "easily"
     },
     {
-      "id" : 10,
+      "id" : 9,
       "text" : "The dog barks ___",
       "word" : "loud",
       "answer" : "loudly"

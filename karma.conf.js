@@ -1,46 +1,46 @@
 //jshint strict: false
 module.exports = function(config) {
-  config.set({
+    config.set({
 
-    basePath: '',
+        basePath: '',
 
-    files: [
-      'app/bower_components/angular/angular.js',
-        '/node-modules/*/base.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/assets/ui-bootstrap-tpls-2.3.0.min.js',
-        'app/services/TestServices.js',
-        'app/test/test.js',
-      'app/test/test-unit-test.js',
-        'app/unit-tests/login-test.js',
-        'app/app.js'
+        files: [
+            'app/bower_components/angular/angular.js',
+            '/node-modules/*/base.js',
+            'app/bower_components/angular-route/angular-route.js',
+            'app/bower_components/angular-mocks/angular-mocks.js',
+            'app/assets/ui-bootstrap-tpls-2.3.0.min.js',
+            'app/services/TestServices.js',
+            'app/test/test.js',
+            'app/unit-tests/test-unit-test.js',
+            'app/unit-tests/login-test.js',
+            'app/app.js'
 
-    ],
+        ],
 
-    autoWatch: true,
+        autoWatch: true,
 
-    frameworks: ['jasmine'],
+        frameworks: ['jasmine'],
 
-      reporters: ['progress'],
+        reporters: ['progress'],
 
 
-    browsers: ['PhantomJS'],
+        browsers: ['PhantomJS'],
 
-      singlerun: false,
+        singlerun: false,
 
-    plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-jasmine',
-      'karma-junit-reporter',
-        'karma-phantomjs-launcher'
-    ],
+        plugins: [
+            'karma-chrome-launcher',
+            'karma-firefox-launcher',
+            'karma-jasmine',
+            'karma-junit-reporter',
+            'karma-phantomjs-launcher'
+        ],
 
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
+        junitReporter: {
+            outputFile: 'test_out/unit.xml',
+            suite: 'unit'
+        }
 
-  });
+    });
 };
