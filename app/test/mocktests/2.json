@@ -7,25 +7,7 @@
     {
       "id" : 1,
       "text" : "He ___ reads a book",
-      "word" : "quick",
-      "options" : [
-        {
-          "id" : 1,
-          "text" : "quickly"
-        },
-        {
-          "id" : 2,
-          "text" : "quick"
-        },
-        {
-          "id" : 3,
-          "text" : "fast"
-        },
-        {
-          "id" : 4,
-          "text" : "fastly"
-        }
-      ]
+      "word" : "quick"
     },
     {
       "id" : 2,

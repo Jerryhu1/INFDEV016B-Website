@@ -1,0 +1,14 @@
+{
+  "email" : "jerryhu1@live.nl",
+  "name" : "Jerry",
+  "lastName" : "Hu",
+  "password" : "test",
+  "completedTests" : [
+      {
+        "testId" : 1,
+        "score" : 8,
+        "date" : "18-12-2016"
+      }
+
+    ]
+}

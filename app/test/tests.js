@@ -5,7 +5,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
         $scope.isCollapsed = false;
         $scope.categories = ["Adjectives or adverb", "Articles", "Imperative"];
-        $scope.tests = [];
+        $scope.tests = [{}, []];
 
         $scope.getAllTests = function()
         {
@@ -15,21 +15,36 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
             });
         };
 
-        $scope.getTestsByCategory = function(category)
+        $scope.getTestsBylevel = function(level)
         {
-            $scope.tests = [];
-            TestService.getAllTests().success(function(result){
+            var testsByLevel = [];
+            angular.forEach($scope.tests, function(test){
 
-                angular.forEach(result, function(item){
-                    console.log(item.category);
-                    console.log(category);
-                    if(item.category == category) {
+                if(test.level == level) {
+                    testsByLevel.push(test);
+                }
+                angular.forEach($scope.categories, function(category){
 
-                        $scope.tests.push(item);
-                    }
+                    $scope.getTestsByCategory(testsByLevel, category);
                 });
+                console.log($scope.tests);
+            })
+
+
+        };
+
+        $scope.getTestsByCategory = function(tests, category)
+        {
+            var tempTests = [];
+
+            angular.forEach(tests, function(item){
+                if(item.category == category) {
+                   tempTests.push(item);
+                }
             });
-        }
+
+            tests.push(category, tempTests);
+        };
 
         $scope.oneAtATime = true;
         $scope.status = {
@@ -38,5 +53,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
             isFirstDisabled: false
         };
 
-
+        $scope.status = {
+            isopen: false
+        };
     }]);

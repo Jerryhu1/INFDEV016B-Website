@@ -2,23 +2,29 @@
 
 angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
-.controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', 'ui.bootstrap', function($scope, UserService) {
+    .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', '$location', function($rootScope,
+                                                                                           $scope, UserService, $location) {
 
-  $scope.login = function(){
+        $scope.user = {};
+        $scope.wrongPass;
 
-     // var loginInfo = {"email" : user.email, "password" : user.password};
-      var loginInfo = {
-          "email": "cool@email.nl",
-          "password": "password2"
-      }
-      UserService.login(loginInfo)
-          .success(function(result){
+        $scope.login = function(){
 
-               //   $rootScope.user = $scope.loginInfo.email;
+            var loginInfo = {"email" : $scope.user.email, "password" : $scope.user.password};
 
-                  $scope.user = result;
+            UserService.getUser(loginInfo.email)
+                .success(function(result){
+
+                    if(loginInfo.password == result.password){
+                        $rootScope.user = result;
+                        $location.url('/profile');
+                        console.log($rootScope.user);
+                    }
+                    else{
+                        $scope.wrongPass = "Wrong password or email, please try again";
+                    }
 
 
-      });
-  }
-}]);
+                });
+        }
+    }]);

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
-    .controller('TestCtrl', ['$scope', 'TestService', '$routeParams',
-        function($scope, TestService, $routeParams) {
+    .controller('TestCtrl', ['$rootScope', '$scope', 'TestService', '$routeParams',
+        function($rootScope, $scope, TestService, $routeParams) {
 
         $scope.exercises = [];
         $scope.answers = [];
@@ -27,6 +27,15 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
             $scope.submitAnswers = function(){
 
                 $scope.score = $scope.calculateScore($scope.exercises, $scope.answers);
+
+                var testModel = {"testId" : $scope.test.id, "score" : $scope.score};
+                console.log(testModel);
+                if($rootScope.user != null)
+                {
+                    $rootScope.user.completedTests.push(testModel);
+                    console.log($rootScope.user);
+
+                }
             };
 
             $scope.calculateScore = function(exercises, answers)

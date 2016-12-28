@@ -1,6 +1,6 @@
 {
   "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "description": "INFDEV016B-Website",
   "version": "0.0.0",
   "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "angular": "~1.5.0"
   },
   "devDependencies": {
-    "karma": "^0.4.6"
+    "karma": "^0.4.6",
+    "protractor": "^4.0.13"
   }
 }
