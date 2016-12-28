@@ -49,8 +49,6 @@ describe('Test page unit test', function(){
             expect($scope.calculateScore(exercises, answers)).toBe(0);
         });
 
-
-
         describe('Test Service', function(){
 
             it('should have a valid TestService', function(){
