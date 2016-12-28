@@ -20,6 +20,11 @@ angular.module('user.services', [])
             return $http.post('http://localhost:3300/login', 'email=cool@email.com&password=password2');
 
         };
+
+        userService.addCompletedTest = function(body)
+        {
+
+        }
         return userService;
     }
 ]);

@@ -34,6 +34,7 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
                 {
                     $rootScope.user.completedTests.push(testModel);
                     console.log($rootScope.user);
+
                 }
             };
 

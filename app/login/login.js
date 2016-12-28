@@ -2,9 +2,11 @@
 
 angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
-    .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', function($rootScope, $scope, UserService) {
+    .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', '$location', function($rootScope,
+                                                                                           $scope, UserService, $location) {
 
         $scope.user = {};
+        $scope.wrongPass;
 
         $scope.login = function(){
 
@@ -15,7 +17,11 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
                     if(loginInfo.password == result.password){
                         $rootScope.user = result;
+                        $location.url('/profile');
                         console.log($rootScope.user);
+                    }
+                    else{
+                        $scope.wrongPass = "Wrong password or email, please try again";
                     }
 
 
