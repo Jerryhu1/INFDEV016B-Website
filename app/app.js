@@ -4,10 +4,9 @@
 angular.module('gameApp', [
     'ngRoute',
     'ngAnimate',
-    'gameApp.view1',
-    'gameApp.view2',
     'gameApp.tests',
     'gameApp.test',
+    'gameApp.profile',
     'user.services',
     'test.services',
     'gameApp.login',
@@ -30,9 +29,13 @@ config(['$locationProvider', '$routeProvider', '$httpProvider', function($locati
                 templateUrl: 'test/test.html',
                 controller: 'TestCtrl'
         })
+        .when('/profile',{
+                templateUrl: 'profile/profile.html',
+                controller: 'ProfileCtrl'
+        })
 
 
-        .otherwise({redirectTo: '/view1'});
+        .otherwise({redirectTo: '/'});
 
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];

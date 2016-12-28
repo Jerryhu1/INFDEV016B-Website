@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>English Test</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -35,8 +35,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#!/tests">testview</a></li>
-        <li><a href="#!/login">loginview</a></li>
+        <li><a href="#!/tests" id="test-page-link">Tests</a></li>
+        <li><a href="#!/login" id="login-page-link">Login</a></li>
+        <li><a href="#!/profile" id="profile-page-link">Profile</a></li>
       </ul>
     </div>
   </div>
@@ -62,14 +63,14 @@
   <script src="assets/ui-bootstrap-tpls-2.3.0.min.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="app.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
   <script src="test/tests.js"></script>
   <script src="test/test.js"></script>
   <script src="login/login.js"></script>
+  <script src="profile/profile.js"></script>
   <script src="services/TestServices.js"></script>
   <script src="services/UserServices.js"></script>
 </div>

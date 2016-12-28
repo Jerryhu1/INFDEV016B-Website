@@ -1,8 +1,8 @@
 {
   "name": "INFDEV016B-Website",
   "private": true,
-  "version": "1.0.0",
-  "description": "An English Tester",
+  "version": "0.2.0",
+  "description": "An English Test",
   "repository": "https://github.com/jerryhu1/INFDEV016B-Website",
   "license": "MIT",
   "devDependencies": {
@@ -46,4 +46,5 @@
     "karma-junit-reporter": "^0.4.1",
     "karma-phantomjs-launcher": "^1.0.2"
   }
+
 }

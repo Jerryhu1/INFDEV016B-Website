@@ -1,11 +1,39 @@
 <div ng-controller="TestsCtrl as testsCtrl"  class="container" ng-init="getAllTests()">
-
+    <h2>Tests</h2>
     <div class="container">
+        <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                Level <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li role="menuitem"><a ng-click="getTestsBylevel('A1')">A1</a></li>
+                <li role="menuitem"><a ng-click="getTestsBylevel('A2')">A2</a></li>
+                <li role="menuitem"><a ng-click="getTestsBylevel('A3')">A3</a></li>
+                <li class="divider"></li>
+                <li role="menuitem"><a href="#">B1</a></li>
+            </ul>
+        </div>
         <div class="categories-container">
             <uib-accordion close-others="oneAtATime">
-                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-                    <ul class="testList" ng-repeat="test in tests">
-                            <li><a ng-href="#!/tests/{{test.id}}">{{test.name}}</a></li>
+                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb">
+                    <ul class="testList" >
+                            <li ng-repeat="test in testsByLevel">
+                                <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
+                            </li>
+                    </ul>
+                </div>
+                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb">
+                    <ul class="testList" >
+                        <li ng-repeat="test in tests">
+                            <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb" >
+                    <ul class="testList" >
+                        <li ng-repeat="test in tests">
+                            <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
+                        </li>
                     </ul>
                 </div>
             </uib-accordion>

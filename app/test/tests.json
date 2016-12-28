@@ -1,16 +1,23 @@
 [
   {
     "id" : 1,
-    "level" : 1,
+    "level" : "A1",
     "name" : "Adjective or adverb - Exercise 1",
     "category" : "Adjectives or adverb"
 
   },
   {
     "id" : 2,
-    "level" : 1,
+    "level" : "A1",
     "name" : "Adjective or adverb - Exercise 2",
     "category" : "Adjectives or adverb"
+
+  },
+  {
+    "id" : 3,
+    "level" : "A1",
+    "name" : "Adjective or adverb - Exercise 2",
+    "category" : "Articles"
 
   }
 ]
