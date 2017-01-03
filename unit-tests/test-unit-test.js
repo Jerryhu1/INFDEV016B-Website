@@ -69,18 +69,40 @@ describe('Test page unit test', function(){
 
         describe('API testing', function(){
 
+
             var tests = [];
             var user;
-            UserService.getAllUsers().success(function(result){
-                user = result;
-            });
-            TestService.getAllTests().success(function(result){
-                tests = result;
+            it('should get all users', function(){
+                UserService.getAllUsers().success(function(result){
+                    user = result[0];
+                });
+
+                expect(user).toBeDefined();
             });
 
+            it('should get all tests', function(){
+                TestService.getAllTests().success(function(result){
+                    tests = result;
+                });
+
+            });
             it('should pass the test', function(){
                 var answers = {"userid" : user.id, "testid" : tests[0].id, "answers" : []};
-            })
+
+                TestService.submitAnswers().success(function(result){
+
+                    expect(result.passed).toBeTruthy();
+                });
+            });
+
+            it('should not pass the test', function(){
+                var answers = {"userid" : user.id, "testid" : tests[0].id, "answers" : []};
+
+                TestService.submitAnswers().success(function(result){
+                    expect(result.passed).toBeFalsy();
+                });
+            });
+
         });
         describe('Test Service', function(){
 
