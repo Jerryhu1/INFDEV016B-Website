@@ -15,14 +15,18 @@
         </div>
         <div class="categories-container">
             <uib-accordion close-others="oneAtATime">
-                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb">
+                <div uib-accordion-group class="panel-default"
+                     heading="Adjectives or adverb"
+                     ng-click="filterTestsByCategory('adjectives')">
+
                     <ul class="testList" >
-                            <li ng-repeat="test in testsByLevel">
+                            <li ng-repeat="test in tests">
                                 <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
                             </li>
                     </ul>
                 </div>
-                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb">
+                <div uib-accordion-group class="panel-default" heading="Imperatives"
+                     ng-click="filterTestsByCategory('imperatives')">
                     <ul class="testList" >
                         <li ng-repeat="test in tests">
                             <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>

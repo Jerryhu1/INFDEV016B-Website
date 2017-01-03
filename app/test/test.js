@@ -28,16 +28,22 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
 
                 $scope.score = $scope.calculateScore($scope.exercises, $scope.answers);
 
-                var testModel = {"testId" : $scope.test.id, "score" : $scope.score};
-                console.log(testModel);
-                if($rootScope.user != null)
-                {
-                    $rootScope.user.completedTests.push(testModel);
-                    console.log($rootScope.user);
+                var count = 1;
 
-                }
+                var answers = {"userid" : $rootScope.user.id, "testid" : $scope.test.id, "answers" : []};
+
+                angular.forEach($scope.answers, function(item){
+
+                    var answer = {"id" : count, "answer" : item};
+                    answers.answers.push(answer);
+                    count++;
+
+                });
+                console.log(answers);
+                TestService.submitAnswers(answers)
             };
 
+            //For mockdata only
             $scope.calculateScore = function(exercises, answers)
             {
                 var score = 0;
@@ -51,6 +57,20 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
                     }
                 }
                 return score;
+            };
+
+            $scope.checkIfPass = function(score)
+            {
+
+                if(score > $scope.test.pass_value)
+                {
+                    console.log('pass');
+
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
 
     }
