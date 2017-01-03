@@ -31,24 +31,57 @@ describe('Test page unit test', function(){
             expect($controller).toBeDefined();
         });
 
+
         it('should have a valid exercises list', function(){
             expect($scope.exercises).toBeDefined();
         });
 
-        it('should get perfect score', function(){
-            var exercises = [{'answer' : 'pretty'}, {'answer' : 'ugly'}];
-            var answers = ['pretty', 'ugly'];
+        describe('Mockdata testing', function() {
 
-            expect($scope.calculateScore(exercises, answers)).toBe(2);
+            it('should get perfect score', function () {
+                var exercises = [{'answer': 'pretty'}, {'answer': 'ugly'}];
+                var answers = ['pretty', 'ugly'];
+
+                expect($scope.calculateScore(exercises, answers)).toBe(2);
+            });
+
+            it('should get a score of 0', function () {
+                var exercises = [{'answer': 'tasd'}, {'answer': 'asdf'}];
+                var answers = ['pretty', 'ugly'];
+
+                expect($scope.calculateScore(exercises, answers)).toBe(0);
+            });
+
+            it('should not pass the test', function () {
+
+                var score = 0;
+                expect($scope.checkIfPass(score)).toBeFalsy();
+            });
+
+
+            it('should pass the test', function () {
+
+                var score = 10;
+                expect($scope.checkIfPass(score)).toBeTruthy();
+            });
         });
 
-        it('should get a score of 0', function(){
-            var exercises = [{'answer' : 'tasd'}, {'answer' : 'asdf'}];
-            var answers = ['pretty', 'ugly'];
 
-            expect($scope.calculateScore(exercises, answers)).toBe(0);
+        describe('API testing', function(){
+
+            var tests = [];
+            var user;
+            UserService.getAllUsers().success(function(result){
+                user = result;
+            });
+            TestService.getAllTests().success(function(result){
+                tests = result;
+            });
+
+            it('should pass the test', function(){
+                var answers = {"userid" : user.id, "testid" : tests[0].id, "answers" : []};
+            })
         });
-
         describe('Test Service', function(){
 
             it('should have a valid TestService', function(){

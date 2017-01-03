@@ -52,21 +52,62 @@ module.exports = function(grunt){
             }
         },
 
+        protractor: {
+            options: {
+                // Location of your protractor config file
+                configFile: "e2e-tests/protractor.conf.js",
+
+                // Do you want the output to use fun colors?
+                noColor: false,
+
+                // Set to true if you would like to use the Protractor command line debugging tool
+                // debug: true,
+
+                // Additional arguments that are passed to the webdriver command
+                args: { }
+            },
+            e2e: {
+                options: {
+                    // Stops Grunt process if a test fails
+                    keepAlive: false
+                }
+            },
+            continuous: {
+                options: {
+                    keepAlive: true
+                }
+            }
+        },
+
+        connect: {
+            options: {
+                port: 9000,
+                hostname: 'localhost'
+            },
+            test: {
+                options: {
+                    // set the location of the application files
+                    base: ['app']
+                }
+            }
+        }
+
+
+
 
     });
 
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-compress');
-
-    // Default task.
-    grunt.registerTask('default', 'karma');
-    grunt.registerTask('default', 'compress');
-
-
+    grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('cibuild', ['karma:continuous', 'default', 'compress']);
-    grunt.registerTask('default', ['uglify']);
+
+    grunt.registerTask('e2e-test', ['connect:test', 'protractor:e2e']);
+    grunt.registerTask('testbuild', ['karma:continuous', 'protractor']);
+    grunt.registerTask('cibuild', ['karma:continuous', 'compress' , 'uglify']);
+
 
 }
 

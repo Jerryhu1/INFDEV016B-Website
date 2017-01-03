@@ -1,8 +1,8 @@
-
 {
   "id" : 1,
   "name" : "Adjective or adverb - Exercise 1",
   "category" : "Adjectives or adverb",
+  "pass_value" : "6",
   "exercises" : [
     {
       "id" : 0,
@@ -64,7 +64,5 @@
       "word" : "loud",
       "answer" : "loudly"
     }
-
-
   ]
 }
