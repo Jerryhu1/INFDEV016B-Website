@@ -8,9 +8,10 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
         $scope.answers = [];
         $scope.maxScore;
         $scope.score;
-
-            TestService.getTest($routeParams.testId).success(function(result){
-                $scope.test = result;
+[]
+            TestService.getTestById($routeParams.testId).success(function(result){
+                $scope.test = result[0]
+                console.log($scope.test);
                 exercisesToList();
             });
 

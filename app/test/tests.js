@@ -31,6 +31,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
         $scope.filterTestsByCategory = function(category)
         {
+            $scope.tests = [];
             angular.forEach(tests, function(item){
 
                 $scope.tests.push(item);
