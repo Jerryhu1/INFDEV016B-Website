@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
-    .controller('TestCtrl', ['$rootScope', '$scope', 'TestService', '$routeParams',
-        function($rootScope, $scope, TestService, $routeParams) {
+    .controller('TestCtrl', ['$rootScope', '$scope' , '$routeParams', 'TestService',
+        function($rootScope, $scope , $routeParams, TestService) {
 
         $scope.exercises = [];
         $scope.answers = [];
         $scope.maxScore;
         $scope.score;
-[]
+
             TestService.getTestById($routeParams.testId).success(function(result){
-                $scope.test = result[0]
+                $scope.test = result[0];
                 console.log($scope.test);
                 exercisesToList();
             });
@@ -31,7 +31,7 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
 
                 var count = 1;
 
-                var answers = {"userid" : $rootScope.user.id, "testid" : $scope.test.id, "answers" : []};
+                var answers = {"userid" : $rootScope.user._id, "testid" : $scope.test._id, "answers" : []};
 
                 angular.forEach($scope.answers, function(item){
 
@@ -60,10 +60,10 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
                 return score;
             };
 
-            $scope.checkIfPass = function(score)
+            $scope.checkIfPass = function(score, passValue)
             {
 
-                if(score > $scope.test.pass_value)
+                if(score >= passValue)
                 {
                     console.log('pass');
 

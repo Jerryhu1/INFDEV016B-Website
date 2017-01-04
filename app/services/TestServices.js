@@ -8,8 +8,7 @@ angular.module('test.services', [])
             $http.defaults.headers.common = { 'api-version' : '0.1.0 '};
 
             TestService.getAllMockTests = function(){
-                return  $http.get('test/tests.json');
-                //return $http.get('http://localhost:3300/tests');
+                return $http.get('test/tests.json');
             };
 
             TestService.getMockTest = function(id){

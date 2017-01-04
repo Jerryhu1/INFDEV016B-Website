@@ -34,7 +34,9 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
             $scope.tests = [];
             angular.forEach(tests, function(item){
 
-                $scope.tests.push(item);
+                if(item.category == category) {
+                    $scope.tests.push(item);
+                }
             })
         };
 

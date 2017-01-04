@@ -1,19 +1,61 @@
 
 {
-  "id" : 2,
-  "name" : "Adjective or adverb - Exercise 2",
-  "category" : "Adjectives or adverb",
+  "name" : "Imperative",
+  "category" : "imperative",
   "exercises" : [
     {
       "id" : 1,
-      "text" : "He ___ reads a book",
-      "word" : "quick"
+      "text" : "__ to go",
+      "word" : "upstairs",
+      "answer" : "go"
     },
     {
       "id" : 2,
-      "text" : "Mandy is a ____ girl",
-      "word" : "pretty"
+      "text" : "__ in this lake",
+      "word" : "not/to swim",
+      "answer" : "do not swim"
+    },
+    {
+      "id" : 3,
+      "text" : "__ your homework",
+      "word" : "to do",
+      "answer" : "do"
+    },   {
+      "id" : 4,
+      "text" : "__ football in the yard",
+      "word" : "not/to play",
+      "answer" : "do not play"
+    },   {
+      "id" : 5,
+      "text" : "__ your teeth",
+      "word" : "to brush",
+      "answer" : "brush"
+    },   {
+      "id" : 6,
+      "text" : "__ during the lesson",
+      "word" : "not/to talk",
+      "answer" : "do not talk"
+    },   {
+      "id" : 7,
+      "text" : "__ the animals in the zoo",
+      "word" : "not/to feed",
+      "answer" : "do not feed"
+    },   {
+      "id" : 8,
+      "text" : "__ the instructions",
+      "word" : "read"
+    },
+    {
+    "id" : 9,
+    "text" : "__ late for school",
+    "word" : "not/to be",
+    "answer" : "do not be"
+    },
+    {
+    "id" : 10,
+    "text" : "__ your mobiles",
+    "word" : "to switch off",
+    "answer" : "switch off"
     }
-
   ]
 }
