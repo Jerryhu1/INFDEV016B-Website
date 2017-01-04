@@ -1,29 +1,31 @@
 describe('Test page unit test', function(){
 
-    var TestService, TestCtrl, $scope, $routeParams, $rootScope, $controller;
+    var UserService, TestService, TestCtrl, $scope, $routeParams, $rootScope, $controller;
 
     beforeEach(angular.mock.module('gameApp.test'));
     beforeEach(angular.mock.module('ui.bootstrap'));
     beforeEach(angular.mock.module('ngRoute'));
     beforeEach(angular.mock.module('test.services'));
+    beforeEach(angular.mock.module('user.services'));
 
     describe('TestController', function(){
 
 
-        beforeEach(inject(function(_$controller_, _$rootScope_, _$routeParams_, _TestService_){
+        beforeEach(inject(function(_$controller_, _$rootScope_, _$routeParams_, _TestService_, _UserService_){
             $rootScope = _$rootScope_;
             $routeParams = _$routeParams_;
             $scope = _$rootScope_.$new();
             TestService = _TestService_;
             $controller = _$controller_;
+            UserService = _UserService_;
 
             TestCtrl = $controller('TestCtrl', {
                 $scope : $scope,
                 $rootScope : _$rootScope_,
                 $routeParams : _$routeParams_,
-                TestService : TestService
+                TestService : TestService,
+                UserService : UserService
             });
-
 
         }));
 
@@ -55,67 +57,50 @@ describe('Test page unit test', function(){
             it('should not pass the test', function () {
 
                 var score = 0;
-                expect($scope.checkIfPass(score)).toBeFalsy();
+                expect($scope.checkIfPass(score, 2)).toBeFalsy();
             });
 
 
             it('should pass the test', function () {
 
                 var score = 10;
-                expect($scope.checkIfPass(score)).toBeTruthy();
+                expect($scope.checkIfPass(score, 10)).toBeTruthy();
             });
         });
 
 
-        describe('API testing', function(){
 
-
-            var tests = [];
-            var user;
-            it('should get all users', function(){
-                UserService.getAllUsers().success(function(result){
-                    user = result[0];
-                });
-
-                expect(user).toBeDefined();
-            });
-
-            it('should get all tests', function(){
-                TestService.getAllTests().success(function(result){
-                    tests = result;
-                });
-
-            });
-            it('should pass the test', function(){
-                var answers = {"userid" : user.id, "testid" : tests[0].id, "answers" : []};
-
-                TestService.submitAnswers().success(function(result){
-
-                    expect(result.passed).toBeTruthy();
-                });
-            });
-
-            it('should not pass the test', function(){
-                var answers = {"userid" : user.id, "testid" : tests[0].id, "answers" : []};
-
-                TestService.submitAnswers().success(function(result){
-                    expect(result.passed).toBeFalsy();
-                });
-            });
-
-        });
-        describe('Test Service', function(){
+        describe('Test Mock Service', function(){
 
             it('should have a valid TestService', function(){
                 expect(TestService).toBeDefined();
             });
 
+            it('should return a list of mock tests', function(){
+                expect(TestService.getAllMockTests()).not.toEqual(0);
+            });
+
+            it('should return a mock test', function(){
+                expect(TestService.getMockTest(1)).not.toEqual(0);
+            });
+
+        });
+
+        describe('Test API Service', function(){
+
             it('should return a list of tests', function(){
                 expect(TestService.getAllTests()).not.toEqual(0);
             });
 
-            it('should return a test', function(){
-                expect(TestService.getTest(1)).not.toEqual(0);
+            it('should return a mock test by id', function(){
+                expect(TestService.getTestById("586bcfb264f8a31a24e880f0")).not.toEqual(0);
+            });
+
+            it('should return tests based on a category', function(){
+                expect(TestService.getAllTestsByCategory('adjectives')).not.toEqual(0);
+            });
+            it('should return tests based on a level', function(){
+                expect(TestService.getAllTestsByLevel('A1')).not.toEqual(0);
             });
 
         })

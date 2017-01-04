@@ -11,6 +11,7 @@ module.exports = function(config) {
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/assets/ui-bootstrap-tpls-2.3.0.min.js',
             'app/services/TestServices.js',
+            'app/services/UserServices.js',
             'app/test/test.js',
             './unit-tests/test-unit-test.js',
             './unit-tests/login-test.js',
