@@ -31,7 +31,7 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
 
                 var count = 1;
 
-                var answers = {"userid" : $rootScope.user._id, "testid" : $scope.test._id, "answers" : []};
+                var answers = {"userId" : $rootScope.user._id, "testId" : $scope.test._id, "answers" : []};
 
                 angular.forEach($scope.answers, function(item){
 

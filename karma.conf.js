@@ -13,6 +13,7 @@ module.exports = function(config) {
             'app/services/TestServices.js',
             'app/services/UserServices.js',
             'app/test/test.js',
+            'app/login/login.js',
             './unit-tests/test-unit-test.js',
             './unit-tests/login-test.js',
             'app/app.js'

@@ -32,7 +32,7 @@ angular.module('test.services', [])
 
             TestService.submitAnswers = function(answers){
 
-                return $http.post('http://localhost:3300/tests/hand-in', answers);
+                return $http.post('http://localhost:3300/tests/hand-in/', answers);
             };
 
             return TestService;

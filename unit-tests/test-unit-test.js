@@ -103,6 +103,44 @@ describe('Test page unit test', function(){
                 expect(TestService.getAllTestsByLevel('A1')).not.toEqual(0);
             });
 
+            var answers = {
+                "userId" : "586bcfb264f8a31a24e880f0",
+                "testId" : "586bc3db64f8a31a24e880ef",
+                "answers" : []
+            };
+
+            it('should be able to submit answers', function(){
+                TestService.submitAnswers(answers).success(function(result){
+                    console.log(result);
+                })
+            });
+
+            it('should not be able to submit answers for a test lower than current level', function(){
+                TestService.submitAnswers(answers).success(function(result){
+                    console.log(result);
+
+                })
+            })
+        });
+
+        describe('Mock with API testing', function(){
+
+            it(' API test should equal body of mock test', function(){
+
+                var apiTest, mockTest;
+                TestService.getAllTests().success(function(result){
+                    apiTest = result[0];
+
+                    TestService.getMockTest(0).success(function(result){
+                        mockTest = result;
+
+                    });
+                    expect(apiTest.exercises).toEqual(mockTest.exercises);
+                });
+
+
+
+            });
         })
     })
 });
