@@ -31,7 +31,7 @@ module.exports = function(grunt){
                 browsers: ['PhantomJS'],
                 reporters: ['dots', 'junit'],
                 junitReporter: {
-                    outputFile: '/test-results/test-results.xml'
+                    outputFile: 'test-results.xml'
                 }
             }
         },
@@ -42,13 +42,16 @@ module.exports = function(grunt){
                     mode: 'tgz',
                     archive: 'target/EnglishTestApp.tgz'
                 },
-                files: [{
-                    expand: true,
-                    src: '/app/',
-                    cwd: 'dist/',
-                    dot: true,
-                    dest: '/build/artifacts/'
-                }]
+                files: [
+                    {src: ['app/**'], dest: '', filter : 'isFile'},
+                    {src: ['unit-tests/*.js'], dest: '', filter : 'isFile'},
+                    {src: ['e2e-tests/*.js'], dest: '', filter : 'isFile'},
+                    {src: ['karma.conf.js'], dest: ''},
+                    {src: ['bower.json'], dest: ''},
+                    {src: ['GruntFile.js'], dest: ''},
+                    {src: ['package.json'], dest: ''},
+                    {src: ['README.md'], dest: ''}
+                    ]
             }
         },
 
