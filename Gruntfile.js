@@ -44,7 +44,7 @@ module.exports = function(grunt){
                 },
                 files: [{
                     expand: true,
-                    src: '/build',
+                    src: '/app/',
                     cwd: 'dist/',
                     dot: true,
                     dest: '/build/artifacts/'
