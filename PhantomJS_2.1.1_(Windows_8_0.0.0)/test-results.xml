@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<testsuite name="PhantomJS 2.1.1 (Windows 8 0.0.0)" package="" timestamp="2017-01-05T11:35:37" id="0" hostname="DESKTOP-BAEKR9T" tests="14" errors="0" failures="0" time="0.076">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
+  </properties>
+  <testcase name="Test page unit test TestController should have a valid Controller" time="0.028" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController should have a valid exercises list" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Mockdata testing should get perfect score" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Mockdata testing should get a score of 0" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Mockdata testing should not pass the test" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Mockdata testing should pass the test" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test Mock Service should have a valid TestService" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test Mock Service should return a list of mock tests" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test Mock Service should return a mock test" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return a list of tests" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return a mock test by id" time="0.002" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return tests based on a category" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return tests based on a level" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Users factory should exist" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Users factory"/>
+  <system-out>
+    <![CDATA[PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'pass'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

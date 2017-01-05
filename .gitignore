@@ -1,4 +1,4 @@
-
+/target/*.tgz
 /benchpress-build/
 .DS_Store
 gen_docs.disable
