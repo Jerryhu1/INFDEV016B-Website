@@ -2,8 +2,8 @@
 
 angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
-    .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', '$location', function($rootScope,
-                                                                                           $scope, UserService, $location) {
+    .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', function($rootScope,
+                                                                                           $scope, UserService) {
 
         $scope.user = {};
         $scope.wrongPass;

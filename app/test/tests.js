@@ -19,7 +19,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
         $scope.getTestsBylevel = function(level)
         {
-            var testsByLevel = [];
+            tests = [];
 
             TestService.getAllTestsByLevel(level).success(function(result){
 
