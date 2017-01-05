@@ -11,7 +11,9 @@ module.exports = function(config) {
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/assets/ui-bootstrap-tpls-2.3.0.min.js',
             'app/services/TestServices.js',
+            'app/services/UserServices.js',
             'app/test/test.js',
+            'app/login/login.js',
             './unit-tests/test-unit-test.js',
             './unit-tests/login-test.js',
             'app/app.js'
@@ -38,7 +40,7 @@ module.exports = function(config) {
         ],
 
         junitReporter: {
-            outputFile: 'test_out/unit.xml',
+            outputFile: '/unit.xml',
             suite: 'unit'
         }
 

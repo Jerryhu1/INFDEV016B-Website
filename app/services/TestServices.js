@@ -2,18 +2,39 @@
 
 angular.module('test.services', [])
     .factory('TestService', ['$http',
-        function($http, $rootScope) {
+        function($http) {
 
             var TestService = {};
+            $http.defaults.headers.common = { 'api-version' : '0.1.0 '};
 
-            TestService.getAllTests = function(){
-                return  $http.get('test/tests.json');
-                //return $http.get('http://localhost:3300/tests');
+            TestService.getAllMockTests = function(){
+                return $http.get('test/tests.json');
             };
 
-            TestService.getTest = function(id){
+            TestService.getMockTest = function(id){
                 return $http.get('test/mocktests/'+ id +'.json')
             };
+
+            TestService.getAllTests = function(){
+                return $http.get('http://localhost:3300/tests/');
+            };
+
+            TestService.getAllTestsByCategory = function(category){
+                return $http.get('http://localhost:3300/tests/category/' + category + '');
+            };
+
+            TestService.getTestById = function(id){
+                return $http.get('http://localhost:3300/tests/' + id + '');
+            }
+            TestService.getAllTestsByLevel = function(level){
+                return $http.get('http://localhost:3300/tests/level/' + level + '');
+            };
+
+            TestService.submitAnswers = function(answers){
+
+                return $http.post('http://localhost:3300/tests/hand-in/', answers);
+            };
+
             return TestService;
         }
     ]);

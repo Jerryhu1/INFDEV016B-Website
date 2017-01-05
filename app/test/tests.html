@@ -8,31 +8,27 @@
             <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
                 <li role="menuitem"><a ng-click="getTestsBylevel('A1')">A1</a></li>
                 <li role="menuitem"><a ng-click="getTestsBylevel('A2')">A2</a></li>
-                <li role="menuitem"><a ng-click="getTestsBylevel('A3')">A3</a></li>
                 <li class="divider"></li>
-                <li role="menuitem"><a href="#">B1</a></li>
+                <li role="menuitem"><a ng-click="getTestsBylevel('B1')">B1</a></li>
             </ul>
         </div>
         <div class="categories-container">
             <uib-accordion close-others="oneAtATime">
-                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb">
+                <div uib-accordion-group class="panel-default"
+                     heading="Adjectives or adverb"
+                     ng-click="filterTestsByCategory('adjectives')">
+
                     <ul class="testList" >
-                            <li ng-repeat="test in testsByLevel">
-                                <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
+                            <li ng-repeat="test in tests">
+                                <a ng-href="#!/tests/{{test._id}}">{{test.name}}</a>
                             </li>
                     </ul>
                 </div>
-                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb">
+                <div uib-accordion-group class="panel-default" heading="Imperatives"
+                     ng-click="filterTestsByCategory('imperative')">
                     <ul class="testList" >
                         <li ng-repeat="test in tests">
-                            <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
-                        </li>
-                    </ul>
-                </div>
-                <div uib-accordion-group class="panel-default" heading="Adjectives or adverb" >
-                    <ul class="testList" >
-                        <li ng-repeat="test in tests">
-                            <a ng-href="#!/tests/{{test.id}}">{{test.name}}</a>
+                            <a ng-href="#!/tests/{{test._id}}">{{test.name}}</a>
                         </li>
                     </ul>
                 </div>

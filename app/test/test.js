@@ -1,16 +1,17 @@
 'use strict';
 
 angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
-    .controller('TestCtrl', ['$rootScope', '$scope', 'TestService', '$routeParams',
-        function($rootScope, $scope, TestService, $routeParams) {
+    .controller('TestCtrl', ['$rootScope', '$scope' , '$routeParams', 'TestService',
+        function($rootScope, $scope , $routeParams, TestService) {
 
         $scope.exercises = [];
         $scope.answers = [];
         $scope.maxScore;
         $scope.score;
 
-            TestService.getTest($routeParams.testId).success(function(result){
-                $scope.test = result;
+            TestService.getTestById($routeParams.testId).success(function(result){
+                $scope.test = result[0];
+                console.log($scope.test);
                 exercisesToList();
             });
 
@@ -28,16 +29,22 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
 
                 $scope.score = $scope.calculateScore($scope.exercises, $scope.answers);
 
-                var testModel = {"testId" : $scope.test.id, "score" : $scope.score};
-                console.log(testModel);
-                if($rootScope.user != null)
-                {
-                    $rootScope.user.completedTests.push(testModel);
-                    console.log($rootScope.user);
+                var count = 1;
 
-                }
+                var answers = {"userId" : $rootScope.user._id, "testId" : $scope.test._id, "answers" : []};
+
+                angular.forEach($scope.answers, function(item){
+
+                    var answer = {"id" : count, "answer" : item};
+                    answers.answers.push(answer);
+                    count++;
+
+                });
+                console.log(answers);
+                TestService.submitAnswers(answers)
             };
 
+            //For mockdata only
             $scope.calculateScore = function(exercises, answers)
             {
                 var score = 0;
@@ -51,6 +58,20 @@ angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
                     }
                 }
                 return score;
+            };
+
+            $scope.checkIfPass = function(score, passValue)
+            {
+
+                if(score >= passValue)
+                {
+                    console.log('pass');
+
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
 
     }
