@@ -31,17 +31,32 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
 
                 var count = 1;
 
-                var answers = {"userId" : $rootScope.user._id, "testId" : $scope.test._id, "answers" : []};
+                if($rootScope.user == null){
+                    alert('You are not logged in tests will not save!');
+                }
+                else {
+                    var answers = {"userId" : $rootScope.user._id, "testId" : $scope.test._id, "answers" : []};
 
-                angular.forEach($scope.answers, function(item){
+                    angular.forEach($scope.answers, function(item){
 
-                    var answer = {"id" : count, "answer" : item};
-                    answers.answers.push(answer);
-                    count++;
+                        var answer = {"id" : count, "answer" : item};
+                        answers.answers.push(answer);
+                        count++;
 
-                });
-                console.log(answers);
-                TestService.submitAnswers(answers)
+
+                    });
+
+                    TestService.submitAnswers(answers).success(function (result) {
+                        if (result.passed == false) {
+                            alert('You did not pass |' +
+                                'Your score:' + result.correctAnswers);
+                        }
+                        else {
+                            alert('You passed! |' +
+                                'Your score: ' + result.correctAnswers);
+                        }
+                    })
+                }
             };
 
             //For mockdata only

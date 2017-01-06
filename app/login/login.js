@@ -17,6 +17,7 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
                        if(result = "Login succesful")
                        {
                            $rootScope.user = loginInfo;
+                           $rootScope.user._id = "586fdbf3e39e4c3c0cf87c32";
                            console.log('Login succesful');
                        }
                 });
