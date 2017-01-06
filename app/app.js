@@ -5,7 +5,7 @@ angular.module('gameApp', [
     'ngRoute',
     'ngAnimate',
     'gameApp.tests',
-    'gameApp.test',
+    'gameApp.adjective',
     'gameApp.profile',
     'gameApp.imperative',
     'user.services',
@@ -26,9 +26,9 @@ config(['$locationProvider', '$routeProvider', '$httpProvider', function($locati
         templateUrl: 'login/login.html',
         controller: 'LoginCtrl'
         })
-        .when('/tests/:testId',{
-                templateUrl: 'test/test.html',
-                controller: 'TestCtrl'
+        .when('/tests/adjective/:testId',{
+                templateUrl: 'test/adjective.html',
+                controller: 'AdjectiveCtrl'
         })
         .when('/tests/imperative/:testId',{
                 templateUrl: 'test/imperative.html',

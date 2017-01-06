@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('gameApp.test', ['ngRoute', 'ui.bootstrap'])
-    .controller('TestCtrl', ['$rootScope', '$scope' , '$routeParams', 'TestService',
+angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
+    .controller('AdjectiveCtrl', ['$rootScope', '$scope' , '$routeParams', 'TestService',
         function($rootScope, $scope , $routeParams, TestService) {
 
         $scope.exercises = [];
