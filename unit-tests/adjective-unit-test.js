@@ -68,8 +68,6 @@ describe('Test page unit test', function(){
             });
         });
 
-
-
         describe('Test Mock Service', function(){
 
             it('should have a valid TestService', function(){
@@ -103,22 +101,52 @@ describe('Test page unit test', function(){
                 expect(TestService.getAllTestsByLevel('A1')).not.toEqual(null);
             });
 
-            var answers = {
+            var incorrectAnswers = {
                 "userId" : "586bcfb264f8a31a24e880f0",
                 "testId" : "586bc3db64f8a31a24e880ef",
                 "answers" : []
             };
 
+
+            var correctAnswers = {"userId" : "586bcfb264f8a31a24e880f0", "testId" : "586bc3db64f8a31a24e880ef", "answers" :
+                [{"id" : 1, "answer" : "go"},
+                {"id" : 2, "answer" : "do not swim"},
+                {"id" : 3, "answer" : "do"},
+                {"id" : 4, "answer" : "do not play"},
+                {"id" : 5, "answer" : "brush"},
+                {"id" : 6, "answer" : "do not talk"},
+                {"id" : 7, "answer" : "do not feed"}] };
+            var correctAnswers2 = {"userId" : "586bcfb264f8a31a24e880f0", "testId" : "586e41624151f02b642a5e6e", "answers" : [
+                {"id" : 1, "answer" : "go"},
+                {"id" : 2, "answer" : "do not swim"},
+                {"id" : 3, "answer" : "do"},
+                {"id" : 4, "answer" : "do not play"},
+                {"id" : 5, "answer" : "brush"},
+                {"id" : 6, "answer" : "do not talk"},
+                {"id" : 7, "answer" : "do not feed"}] };
+
             it('should be able to submit answers', function(){
-                TestService.submitAnswers(answers).success(function(result){
-                    console.log(result);
+                TestService.submitAnswers(incorrectAnswers).success(function(result){
+                    expect(result).not.toEqual(null);
                 })
             });
+            it('should not pass a test', function(){
+                TestService.submitAnswers(incorrectAnswers).success(function(result){
+                    expect(result.passed).toBeFalsy();
+                })
+            });
+            it('should pass a test', function(){
+                TestService.submitAnswers(correctAnswers).success(function(result){
+                    expect(result.passed).toBeTruthy();
+                });
+            });
+            it('should level up to A2', function(){
 
-            it('should not be able to submit answers for a test lower than current level', function(){
-                TestService.submitAnswers(answers).success(function(result){
-                    console.log(result);
+                TestService.submitAnswers(correctAnswers);
+                TestService.submitAnswers(correctAnswers2);
 
+                UserService.getUser("586bcfb264f8a31a24e880f0").success(function(result){
+                    expect(result.level).toEqual("A2");
                 })
             })
         });
