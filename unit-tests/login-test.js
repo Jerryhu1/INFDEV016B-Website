@@ -38,14 +38,22 @@ describe('Users unit test', function(){
 
         describe('UserService API ', function(){
 
+            var loginInfo = {"email" : "test@test.com", "password" : "test"};
+
             it('should return all users', function(){
-                expect(UserService.getAllUsers()).not.toEqual(0);
+                expect(UserService.getAllUsers()).not.toEqual(null);
             });
 
             it('should return a single user by id', function(){
                 expect(UserService.getUser("586bcfb264f8a31a24e880f0"));
-            })
+            });
 
+            it('should login successfully', function(){
+                UserService.login(loginInfo).success(function(result){
+
+                    expect(result).toEqual("Login succesfully");
+                })
+            });
         })
     });
 });

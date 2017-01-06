@@ -2,7 +2,7 @@ describe('Test page unit test', function(){
 
     var UserService, TestService, TestCtrl, $scope, $routeParams, $rootScope, $controller;
 
-    beforeEach(angular.mock.module('gameApp.test'));
+    beforeEach(angular.mock.module('gameApp.imperative'));
     beforeEach(angular.mock.module('ui.bootstrap'));
     beforeEach(angular.mock.module('ngRoute'));
     beforeEach(angular.mock.module('test.services'));
@@ -19,7 +19,7 @@ describe('Test page unit test', function(){
             $controller = _$controller_;
             UserService = _UserService_;
 
-            TestCtrl = $controller('TestCtrl', {
+            TestCtrl = $controller('ImperativeCtrl', {
                 $scope : $scope,
                 $rootScope : _$rootScope_,
                 $routeParams : _$routeParams_,
@@ -40,26 +40,23 @@ describe('Test page unit test', function(){
 
         describe('Mockdata testing', function() {
 
-            it('should get perfect score', function () {
-                var exercises = [{'answer': 'pretty'}, {'answer': 'ugly'}];
-                var answers = ['pretty', 'ugly'];
+            it('should get a score of 1', function () {
+                var exercises = [{'answer': 'cool'}, {'answer': 'old'}];
+                var answers = ['funny', 'old'];
 
-                expect($scope.calculateScore(exercises, answers)).toBe(2);
+                expect($scope.calculateScore(exercises, answers)).toBe(1);
             });
 
             it('should get a score of 0', function () {
-                var exercises = [{'answer': 'tasd'}, {'answer': 'asdf'}];
-                var answers = ['pretty', 'ugly'];
-
+                var exercises = [{'answer': 'funny'}, {'answer': 'old'}];
+                var answers = ['rock', 'stone'];
                 expect($scope.calculateScore(exercises, answers)).toBe(0);
             });
 
             it('should not pass the test', function () {
-
                 var score = 0;
                 expect($scope.checkIfPass(score, 2)).toBeFalsy();
             });
-
 
             it('should pass the test', function () {
 
@@ -68,8 +65,6 @@ describe('Test page unit test', function(){
             });
         });
 
-
-
         describe('Test Mock Service', function(){
 
             it('should have a valid TestService', function(){
@@ -77,11 +72,11 @@ describe('Test page unit test', function(){
             });
 
             it('should return a list of mock tests', function(){
-                expect(TestService.getAllMockTests()).not.toEqual(0);
+                expect(TestService.getAllMockTests()).not.toEqual(null);
             });
 
             it('should return a mock test', function(){
-                expect(TestService.getMockTest(1)).not.toEqual(0);
+                expect(TestService.getMockTest(1)).not.toEqual(null);
             });
 
         });
@@ -93,34 +88,15 @@ describe('Test page unit test', function(){
             });
 
             it('should return a mock test by id', function(){
-                expect(TestService.getTestById("586bcfb264f8a31a24e880f0")).not.toEqual(0);
+                expect(TestService.getTestById("586bcfb264f8a31a24e880f0")).not.toEqual(null);
             });
 
             it('should return tests based on a category', function(){
-                expect(TestService.getAllTestsByCategory('adjectives')).not.toEqual(0);
+                expect(TestService.getAllTestsByCategory('imperatives')).not.toEqual(null);
             });
             it('should return tests based on a level', function(){
-                expect(TestService.getAllTestsByLevel('A1')).not.toEqual(0);
+                expect(TestService.getAllTestsByLevel('A2')).not.toEqual(null);
             });
-
-            var answers = {
-                "userId" : "586bcfb264f8a31a24e880f0",
-                "testId" : "586bc3db64f8a31a24e880ef",
-                "answers" : []
-            };
-
-            it('should be able to submit answers', function(){
-                TestService.submitAnswers(answers).success(function(result){
-                    console.log(result);
-                })
-            });
-
-            it('should not be able to submit answers for a test lower than current level', function(){
-                TestService.submitAnswers(answers).success(function(result){
-                    console.log(result);
-
-                })
-            })
         });
 
         describe('Mock with API testing', function(){
@@ -131,15 +107,12 @@ describe('Test page unit test', function(){
                 TestService.getAllTests().success(function(result){
                     apiTest = result[0];
 
-                    TestService.getMockTest(0).success(function(result){
+                    TestService.getMockTest().success(function(result){
                         mockTest = result;
 
                     });
                     expect(apiTest.exercises).toEqual(mockTest.exercises);
                 });
-
-
-
             });
         })
     })

@@ -7,6 +7,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
         $scope.categories = ["Adjectives or adverb", "Articles", "Imperative"];
         var tests = [];
         $scope.tests = [];
+        var currentCategory;
 
 
         $scope.getAllTests = function()
@@ -23,7 +24,14 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
             TestService.getAllTestsByLevel(level).success(function(result){
 
-               tests = result;
+                console.log(currentCategory);
+                if(currentCategory != null){
+                    tests = result;
+                    $scope.filterTestsByCategory(currentCategory);
+                }
+                else {
+                    $scope.tests = result;
+                }
             })
 
 
@@ -31,6 +39,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
         $scope.filterTestsByCategory = function(category)
         {
+            currentCategory = category;
             $scope.tests = [];
             angular.forEach(tests, function(item){
 

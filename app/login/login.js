@@ -12,10 +12,19 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
             var loginInfo = {"email" : $scope.user.email, "password" : $scope.user.password};
 
-            UserService.getAllUsers(loginInfo.email)
+            UserService.login(loginInfo)
                 .success(function(result){
-                        $rootScope.user = result[0];
-                        console.log($rootScope.user);
+                       if(result = "Login succesful")
+                       {
+                           $rootScope.user = loginInfo;
+                           $rootScope.user._id = "586fdbf3e39e4c3c0cf87c32";
+                           console.log('Login succesful');
+                       }
                 });
+
+            UserService.getUser("586fdbf3e39e4c3c0cf87c32").success(function(user){
+
+                $rootScope.user = user[0];
+            })
         }
     }]);
