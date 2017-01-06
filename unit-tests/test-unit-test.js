@@ -77,11 +77,11 @@ describe('Test page unit test', function(){
             });
 
             it('should return a list of mock tests', function(){
-                expect(TestService.getAllMockTests()).not.toEqual(0);
+                expect(TestService.getAllMockTests()).not.toEqual(null);
             });
 
             it('should return a mock test', function(){
-                expect(TestService.getMockTest(1)).not.toEqual(0);
+                expect(TestService.getMockTest(1)).not.toEqual(null);
             });
 
         });
@@ -93,14 +93,14 @@ describe('Test page unit test', function(){
             });
 
             it('should return a mock test by id', function(){
-                expect(TestService.getTestById("586bcfb264f8a31a24e880f0")).not.toEqual(0);
+                expect(TestService.getTestById("586bcfb264f8a31a24e880f0")).not.toEqual(null);
             });
 
             it('should return tests based on a category', function(){
-                expect(TestService.getAllTestsByCategory('adjectives')).not.toEqual(0);
+                expect(TestService.getAllTestsByCategory('adjectives')).not.toEqual(null);
             });
             it('should return tests based on a level', function(){
-                expect(TestService.getAllTestsByLevel('A1')).not.toEqual(0);
+                expect(TestService.getAllTestsByLevel('A1')).not.toEqual(null);
             });
 
             var answers = {
@@ -131,7 +131,7 @@ describe('Test page unit test', function(){
                 TestService.getAllTests().success(function(result){
                     apiTest = result[0];
 
-                    TestService.getMockTest(0).success(function(result){
+                    TestService.getMockTest().success(function(result){
                         mockTest = result;
 
                     });

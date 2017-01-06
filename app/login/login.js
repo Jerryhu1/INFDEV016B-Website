@@ -12,10 +12,13 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
             var loginInfo = {"email" : $scope.user.email, "password" : $scope.user.password};
 
-            UserService.getAllUsers(loginInfo.email)
+            UserService.login(loginInfo)
                 .success(function(result){
-                        $rootScope.user = result[0];
-                        console.log($rootScope.user);
+                       if(result = "Login succesful")
+                       {
+                           $rootScope.user = loginInfo;
+                           console.log('Login succesful');
+                       }
                 });
         }
     }]);

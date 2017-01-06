@@ -39,7 +39,7 @@ describe('Users unit test', function(){
         describe('UserService API ', function(){
 
             it('should return all users', function(){
-                expect(UserService.getAllUsers()).not.toEqual(0);
+                expect(UserService.getAllUsers()).not.toEqual(null);
             });
 
             it('should return a single user by id', function(){

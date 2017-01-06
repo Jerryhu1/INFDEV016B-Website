@@ -7,6 +7,7 @@ angular.module('gameApp', [
     'gameApp.tests',
     'gameApp.test',
     'gameApp.profile',
+    'gameApp.imperative',
     'user.services',
     'test.services',
     'gameApp.login',
@@ -28,6 +29,10 @@ config(['$locationProvider', '$routeProvider', '$httpProvider', function($locati
         .when('/tests/:testId',{
                 templateUrl: 'test/test.html',
                 controller: 'TestCtrl'
+        })
+        .when('/tests/imperative/:testId',{
+                templateUrl: 'test/imperative.html',
+                controller: 'ImperativeCtrl'
         })
         .when('/profile',{
                 templateUrl: 'profile/profile.html',

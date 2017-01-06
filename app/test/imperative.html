@@ -1,0 +1,19 @@
+<div ng-controller="ImperativeCtrl as imperativeCtrl"  class="container" ng-init="getTests()">
+
+    <div class="container">
+        <h1>{{test.name}}</h1>
+        <form name="exercise-form">
+            <div class="test-container" ng-repeat="exercise in exercises">
+                <ul class="exercise-list">
+                    <li class="exercise">{{exercise.text}}  ({{exercise.word}})
+                        <input type="text"  ng-model="answers[exercise.id]"></li>
+                </ul>
+`
+            </div>
+            <button type="submit" ng-click="submitAnswers()">Submit</button>
+        </form>
+        <div class="score-container">
+            <p>Score: {{score}}/{{maxScore}}</p>
+        </div>
+    </div>
+</div>
