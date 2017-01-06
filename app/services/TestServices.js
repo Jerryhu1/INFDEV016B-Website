@@ -35,6 +35,9 @@ angular.module('test.services', [])
                 return $http.post('http://localhost:3300/hand-in/', answers);
             };
 
+            TestService.getTestResults = function(testId, userId){
+                return $http.get('http://localhost:3300/tests/' + testId + "/users/" + userId)
+            }
             return TestService;
         }
     ]);

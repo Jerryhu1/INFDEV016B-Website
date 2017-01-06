@@ -4,23 +4,40 @@ angular.module('gameApp.profile', ['ngRoute', 'ui.bootstrap'])
     .controller('ProfileCtrl', ['$rootScope', '$scope', 'UserService', 'TestService', '$routeParams',
         function($rootScope, $scope, UserService, TestService, $routeParams) {
 
-            $scope.testList = [];
+            var testList = [];
+            $scope.results = [];
 
-            var getDetailTestInfo = function(tests)
-            {
-                angular.forEach(tests, function(item){
-                    TestService.getTest(item.testId).success(function (test) {
-                        var completedTest = {"id" : test.id, "name" : test.name, "score" : item.score};
-                        console.log(completedTest);
-                        $scope.testList.push(completedTest);
-                    });
+            var user = $rootScope.user;
+
+            TestService.getAllTests().success(function(result){
+                $scope.testList = result;
+                getResults();
+            });
+
+
+            var getResults = function() {
+                angular.forEach($scope.testList, function (test) {
+                    console.log(test);
+
+                    TestService.getTestResults(test._id, user._id).success(function (result) {
+
+                        console.log(result);
+                        var testResult = {
+                            "name": test.name,
+                            "level": test.level,
+                            "score": result[0].correctAnswers,
+                            "passed": result[0].passed
+                        };
+                        $scope.results.push(testResult);
+                    })
+
                 });
-                console.log($scope.testList);
             }
 
             if($rootScope.user != null){
                 $scope.profile = $rootScope.user;
-                getDetailTestInfo($scope.profile.completedTests);
             }
+
+
         }
     ]);

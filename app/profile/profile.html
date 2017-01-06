@@ -4,13 +4,14 @@
         <span>Name : {{profile.name}}</span>
         <br>
         <span>Email : {{profile.email}}</span>
+        <br>
+        <span>Level : {{profile.level}}</span>
 
         <h3>Recent completed tests</h3>
         <ul class="test-list">
-            <li class="completed-test" ng-repeat=" test in testList">
-                   Name: {{test.name}}
-                   Score:{{test.score}}
-                </ul>
+            <li class="completed-test" ng-repeat=" result in results">
+                   Name: {{result.name}}
+                   Score:{{result.score}}
             </li>
         </ul>
     </div>

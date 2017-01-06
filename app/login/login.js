@@ -21,5 +21,10 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
                            console.log('Login succesful');
                        }
                 });
+
+            UserService.getUser("586fdbf3e39e4c3c0cf87c32").success(function(user){
+
+                $rootScope.user = user[0];
+            })
         }
     }]);
