@@ -2,7 +2,7 @@ describe('Test page unit test', function(){
 
     var UserService, TestService, TestCtrl, $scope, $routeParams, $rootScope, $controller;
 
-    beforeEach(angular.mock.module('gameApp.test'));
+    beforeEach(angular.mock.module('gameApp.adjective'));
     beforeEach(angular.mock.module('ui.bootstrap'));
     beforeEach(angular.mock.module('ngRoute'));
     beforeEach(angular.mock.module('test.services'));
@@ -19,7 +19,7 @@ describe('Test page unit test', function(){
             $controller = _$controller_;
             UserService = _UserService_;
 
-            TestCtrl = $controller('TestCtrl', {
+            TestCtrl = $controller('AdjectiveCtrl', {
                 $scope : $scope,
                 $rootScope : _$rootScope_,
                 $routeParams : _$routeParams_,
