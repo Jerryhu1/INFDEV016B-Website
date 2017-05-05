@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
-    .controller('TestsCtrl', ['$scope', 'TestService',  function($scope, TestService) {
+    .controller('TestsCtrl', ['$rootScope', '$scope', 'TestService',  function($rootScope, $scope, TestService) {
 
         $scope.isCollapsed = false;
         $scope.categories = ["Adjectives or adverb", "Articles", "Imperative"];
@@ -14,8 +14,24 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
         {
             TestService.getAllTests().success(function(result){
 
-                    tests = result;
-            });
+                    $scope.setTestsByLevel(result);
+            })
+                .error(function(res){
+                    TestService.getAllMockTests().success(function(result){
+                        $scope.setTestsByLevel(result);
+                    });
+                });
+        };
+
+        $scope.setTestsByLevel = function(testList)
+        {
+
+            angular.forEach(testList, function(test){
+                if(test.level == $rootScope.user.level){
+                    tests.push(test);
+                    $scope.tests.push(test);
+                }
+            })
         };
 
         $scope.getTestsBylevel = function(level)
@@ -24,7 +40,6 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
             TestService.getAllTestsByLevel(level).success(function(result){
 
-                console.log(currentCategory);
                 if(currentCategory != null){
                     tests = result;
                     $scope.filterTestsByCategory(currentCategory);
@@ -42,7 +57,6 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
             currentCategory = category;
             $scope.tests = [];
             angular.forEach(tests, function(item){
-
                 if(item.category == category) {
                     $scope.tests.push(item);
                 }

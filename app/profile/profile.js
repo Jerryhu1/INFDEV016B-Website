@@ -4,7 +4,6 @@ angular.module('gameApp.profile', ['ngRoute', 'ui.bootstrap'])
     .controller('ProfileCtrl', ['$rootScope', '$scope', 'UserService', 'TestService', '$routeParams',
         function($rootScope, $scope, UserService, TestService, $routeParams) {
 
-            var testList = [];
             $scope.results = [];
 
             var user = $rootScope.user;
@@ -17,11 +16,8 @@ angular.module('gameApp.profile', ['ngRoute', 'ui.bootstrap'])
 
             var getResults = function() {
                 angular.forEach($scope.testList, function (test) {
-                    console.log(test);
-
                     TestService.getTestResults(test._id, user._id).success(function (result) {
-
-                        console.log(result);
+                        
                         var testResult = {
                             "name": test.name,
                             "level": test.level,
@@ -30,9 +26,12 @@ angular.module('gameApp.profile', ['ngRoute', 'ui.bootstrap'])
                         };
                         $scope.results.push(testResult);
                     })
+                        .error(function(res){
+                            console.log("No tests found for user: " + user._id);
+                        })
 
                 });
-            }
+            };
 
             if($rootScope.user != null){
                 $scope.profile = $rootScope.user;
