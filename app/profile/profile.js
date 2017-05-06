@@ -17,7 +17,7 @@ angular.module('gameApp.profile', ['ngRoute', 'ui.bootstrap'])
             var getResults = function() {
                 angular.forEach($scope.testList, function (test) {
                     TestService.getTestResults(test._id, user._id).success(function (result) {
-                        
+
                         var testResult = {
                             "name": test.name,
                             "level": test.level,

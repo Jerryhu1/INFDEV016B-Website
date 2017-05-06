@@ -1,26 +1,412 @@
 [
   {
-    "id" : 1,
-    "level" : "A1",
-    "name" : "Adjective or adverb - Exercise 1",
-    "category" : "Adjectives or adverb"
-
+    "_id": "586bc3db64f8a31a24e880ef",
+    "name": "Adjective or adverb - Exercise 1",
+    "category": "adjectives",
+    "level": "A1",
+    "passvalue": "7",
+    "exercises": [
+      {
+        "id": 1,
+        "text": "He ____ reads a book",
+        "word": "quick",
+        "answer": "quickly"
+      },
+      {
+        "id": 2,
+        "text": "Mandy is a ___ girl",
+        "word": "pretty",
+        "answer": "pretty"
+      },
+      {
+        "id": 3,
+        "text": "The class is ___ loud today",
+        "word": "terrible",
+        "answer": "terribly"
+      },
+      {
+        "id": 4,
+        "text": "Max is a ___ singer",
+        "word": "good",
+        "answer": "good"
+      },
+      {
+        "id": 5,
+        "text": "It's a ___ day today",
+        "word": "terrible",
+        "answer": "terrible"
+      },
+      {
+        "id": 6,
+        "text": "She sings the song ___",
+        "word": "good",
+        "answer": "well"
+      },
+      {
+        "id": 7,
+        "text": "He is a ___ driver",
+        "word": "careful",
+        "answer": "careful"
+      },
+      {
+        "id": 8,
+        "text": "He drives the car ___",
+        "word": "careful",
+        "answer": "carefully"
+      },
+      {
+        "id": 9,
+        "text": "You can ___ open this tin",
+        "word": "easy",
+        "answer": "easily"
+      },
+      {
+        "id": 10,
+        "text": "The dog barks ___",
+        "word": "loud",
+        "answer": "loudly"
+      }
+    ]
   },
   {
-    "id" : 2,
-    "level" : "A1",
-    "name" : "Adjective or adverb - Exercise 2",
-    "category" : "Adjectives or adverb"
-
+    "_id": "586e41624151f02b642a5e6e",
+    "name": "Imperative - Exercise 1",
+    "category": "imperative",
+    "level": "A1",
+    "exercises": [
+      {
+        "id": 1,
+        "text": "__ to go",
+        "word": "upstairs",
+        "answer": "go"
+      },
+      {
+        "id": 2,
+        "text": "__ in this lake",
+        "word": "not/to swim",
+        "answer": "do not swim"
+      },
+      {
+        "id": 3,
+        "text": "__ your homework",
+        "word": "to do",
+        "answer": "do"
+      },
+      {
+        "id": 4,
+        "text": "__ football in the yard",
+        "word": "not/to play",
+        "answer": "do not play"
+      },
+      {
+        "id": 5,
+        "text": "__ your teeth",
+        "word": "to brush",
+        "answer": "brush"
+      },
+      {
+        "id": 6,
+        "text": "__ during the lesson",
+        "word": "not/to talk",
+        "answer": "do not talk"
+      },
+      {
+        "id": 7,
+        "text": "__ the animals in the zoo",
+        "word": "not/to feed",
+        "answer": "do not feed"
+      },
+      {
+        "id": 8,
+        "text": "__ the instructions",
+        "word": "read"
+      },
+      {
+        "id": 9,
+        "text": "__ late for school",
+        "word": "not/to be",
+        "answer": "do not be"
+      },
+      {
+        "id": 10,
+        "text": "__ your mobiles",
+        "word": "to switch off",
+        "answer": "switch off"
+      }
+    ]
   },
   {
-    "id" : 3,
-    "level" : "A1",
-    "name" : "Adjective or adverb - Exercise 2",
-    "category" : "Articles"
-
+    "_id": "586e41b04151f02b642a5e6f",
+    "name": "Imperative - Exercise 2",
+    "category": "imperative",
+    "level": "A2",
+    "passvalue": 7,
+    "exercises": [
+      {
+        "id": 1,
+        "text": "__ to go",
+        "word": "upstairs",
+        "answer": "go"
+      },
+      {
+        "id": 2,
+        "text": "__ in this lake",
+        "word": "not/to swim",
+        "answer": "do not swim"
+      },
+      {
+        "id": 3,
+        "text": "__ your homework",
+        "word": "to do",
+        "answer": "do"
+      },
+      {
+        "id": 4,
+        "text": "__ football in the yard",
+        "word": "not/to play",
+        "answer": "do not play"
+      },
+      {
+        "id": 5,
+        "text": "__ your teeth",
+        "word": "to brush",
+        "answer": "brush"
+      },
+      {
+        "id": 6,
+        "text": "__ during the lesson",
+        "word": "not/to talk",
+        "answer": "do not talk"
+      },
+      {
+        "id": 7,
+        "text": "__ the animals in the zoo",
+        "word": "not/to feed",
+        "answer": "do not feed"
+      },
+      {
+        "id": 8,
+        "text": "__ the instructions",
+        "word": "read"
+      },
+      {
+        "id": 9,
+        "text": "__ late for school",
+        "word": "not/to be",
+        "answer": "do not be"
+      },
+      {
+        "id": 10,
+        "text": "__ your mobiles",
+        "word": "to switch off",
+        "answer": "switch off"
+      }
+    ]
+  },
+  {
+    "_id": "586e466e4151f02b642a5e70",
+    "name": "Imperative - Exercise 3",
+    "passvalue": 7,
+    "category": "imperative",
+    "level": "B1",
+    "exercises": [
+      {
+        "id": 1,
+        "text": "__ to go",
+        "word": "upstairs",
+        "answer": "go"
+      },
+      {
+        "id": 2,
+        "text": "__ in this lake",
+        "word": "not/to swim",
+        "answer": "do not swim"
+      },
+      {
+        "id": 3,
+        "text": "__ your homework",
+        "word": "to do",
+        "answer": "do"
+      },
+      {
+        "id": 4,
+        "text": "__ football in the yard",
+        "word": "not/to play",
+        "answer": "do not play"
+      },
+      {
+        "id": 5,
+        "text": "__ your teeth",
+        "word": "to brush",
+        "answer": "brush"
+      },
+      {
+        "id": 6,
+        "text": "__ during the lesson",
+        "word": "not/to talk",
+        "answer": "do not talk"
+      },
+      {
+        "id": 7,
+        "text": "__ the animals in the zoo",
+        "word": "not/to feed",
+        "answer": "do not feed"
+      },
+      {
+        "id": 8,
+        "text": "__ the instructions",
+        "word": "read"
+      },
+      {
+        "id": 9,
+        "text": "__ late for school",
+        "word": "not/to be",
+        "answer": "do not be"
+      },
+      {
+        "id": 10,
+        "text": "__ your mobiles",
+        "word": "to switch off",
+        "answer": "switch off"
+      }
+    ]
+  },
+  {
+    "_id": "586e46914151f02b642a5e72",
+    "name": "Adjective or adverb - Exercise 2",
+    "category": "adjectives",
+    "level": "A2",
+    "passvalue": "7",
+    "exercises": [
+      {
+        "id": 1,
+        "text": "He ____ reads a book",
+        "word": "quick",
+        "answer": "quickly"
+      },
+      {
+        "id": 2,
+        "text": "Mandy is a ___ girl",
+        "word": "pretty",
+        "answer": "pretty"
+      },
+      {
+        "id": 3,
+        "text": "The class is ___ loud today",
+        "word": "terrible",
+        "answer": "terribly"
+      },
+      {
+        "id": 4,
+        "text": "Max is a ___ singer",
+        "word": "good",
+        "answer": "good"
+      },
+      {
+        "id": 5,
+        "text": "It's a ___ day today",
+        "word": "terrible",
+        "answer": "terrible"
+      },
+      {
+        "id": 6,
+        "text": "She sings the song ___",
+        "word": "good",
+        "answer": "well"
+      },
+      {
+        "id": 7,
+        "text": "He is a ___ driver",
+        "word": "careful",
+        "answer": "careful"
+      },
+      {
+        "id": 8,
+        "text": "He drives the car ___",
+        "word": "careful",
+        "answer": "carefully"
+      },
+      {
+        "id": 9,
+        "text": "You can ___ open this tin",
+        "word": "easy",
+        "answer": "easily"
+      },
+      {
+        "id": 10,
+        "text": "The dog barks ___",
+        "word": "loud",
+        "answer": "loudly"
+      }
+    ]
+  },
+  {
+    "_id": "586e476e4151f02b642a5e73",
+    "name": "Adjective or adverb - Exercise 3",
+    "category": "adjectives",
+    "level": "B1",
+    "passvalue": "7",
+    "exercises": [
+      {
+        "id": 1,
+        "text": "He ____ reads a book",
+        "word": "quick",
+        "answer": "quickly"
+      },
+      {
+        "id": 2,
+        "text": "Mandy is a ___ girl",
+        "word": "pretty",
+        "answer": "pretty"
+      },
+      {
+        "id": 3,
+        "text": "The class is ___ loud today",
+        "word": "terrible",
+        "answer": "terribly"
+      },
+      {
+        "id": 4,
+        "text": "Max is a ___ singer",
+        "word": "good",
+        "answer": "good"
+      },
+      {
+        "id": 5,
+        "text": "It's a ___ day today",
+        "word": "terrible",
+        "answer": "terrible"
+      },
+      {
+        "id": 6,
+        "text": "She sings the song ___",
+        "word": "good",
+        "answer": "well"
+      },
+      {
+        "id": 7,
+        "text": "He is a ___ driver",
+        "word": "careful",
+        "answer": "careful"
+      },
+      {
+        "id": 8,
+        "text": "He drives the car ___",
+        "word": "careful",
+        "answer": "carefully"
+      },
+      {
+        "id": 9,
+        "text": "You can ___ open this tin",
+        "word": "easy",
+        "answer": "easily"
+      },
+      {
+        "id": 10,
+        "text": "The dog barks ___",
+        "word": "loud",
+        "answer": "loudly"
+      }
+    ]
   }
 ]
-
-
-

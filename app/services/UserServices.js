@@ -28,6 +28,10 @@ angular.module('user.services', [])
         userService.login = function(body){
             return $http.post('http://localhost:3300/login', body);
         };
+
+        userService.register = function(body){
+            return $http.post('http://localhost:3300/users/', body);
+        }
         return userService;
     }
 ]);

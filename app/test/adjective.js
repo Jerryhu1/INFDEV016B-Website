@@ -51,13 +51,13 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
                     count++;
                 });
 
-                $scope.score = $scope.calculateScore($scope.exercises, $scope.answers);
+                $scope.score = $scope.calculateScore($scope.exercises, answers.answers);
 
 
                 TestService.submitAnswers(answers).success(function (result) {
                     if (result.passed == false) {
                         alert('You did not pass |' +
-                            'Your score:' + result.correctAnswers);
+                            'Your score: ' + result.correctAnswers);
                     }
                     else {
                         alert('You passed! |' +
@@ -84,18 +84,20 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
 
                 });
 
-                $scope.score = $scope.calculateScore($scope.exercises, $scope.answers);
+                $scope.score = $scope.calculateScore($scope.exercises, answers.answers);
                 $scope.passed = $scope.checkIfPass(exercises, passValue);
             };
 
             //For mockdata only
             $scope.calculateScore = function(exercises, answers)
             {
+                console.log(exercises);
+                console.log(answers);
                 var score = 0;
                 for(var i=0; i<exercises.length; i++)
                 {
                     var exerciseAnswer = exercises[i].answer;
-                    var givenAnswer = answers[i];
+                    var givenAnswer = answers[i].answer;
                     if(exerciseAnswer == givenAnswer)
                     {
                         score++;

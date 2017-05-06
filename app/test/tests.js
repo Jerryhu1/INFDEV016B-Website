@@ -12,15 +12,15 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
         $scope.getAllTests = function()
         {
-            TestService.getAllTests().success(function(result){
-
+            TestService.getAllTests()
+            .success(function(result){
                     $scope.setTestsByLevel(result);
             })
-                .error(function(res){
-                    TestService.getAllMockTests().success(function(result){
-                        $scope.setTestsByLevel(result);
-                    });
+            .error(function(res){
+                TestService.getAllMockTests().success(function(result){
+                    $scope.setTestsByLevel(result);
                 });
+            });
         };
 
         $scope.setTestsByLevel = function(testList)
@@ -37,18 +37,24 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
         $scope.getTestsBylevel = function(level)
         {
             tests = [];
+            if(level == $rootScope.user.level) {
 
-            TestService.getAllTestsByLevel(level).success(function(result){
+                TestService.getAllTestsByLevel(level).success(function (result) {
 
-                if(currentCategory != null){
-                    tests = result;
-                    $scope.filterTestsByCategory(currentCategory);
-                }
-                else {
-                    $scope.tests = result;
-                }
-            })
-
+                    if (currentCategory != null) {
+                        tests = result;
+                        $scope.filterTestsByCategory(currentCategory);
+                    }
+                    else {
+                        $scope.tests = result;
+                    }
+                });
+                return true;
+            }
+            else{
+                alert('You are not level: ' + level + " yet!");
+                return false;
+            }
 
         };
 
