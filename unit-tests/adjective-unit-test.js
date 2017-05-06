@@ -29,6 +29,9 @@ describe('Test page unit test', function(){
 
         }));
 
+
+
+
         it('should have a valid Controller', function(){
             expect($controller).toBeDefined();
         });
@@ -46,15 +49,15 @@ describe('Test page unit test', function(){
         describe('Mockdata testing', function() {
 
             it('should get perfect score', function () {
-                var exercises = [{'answer': 'pretty'}, {'answer': 'ugly'}];
-                var answers = ['pretty', 'ugly'];
+                var exercises = [{'answer': 'pretty', 'id' : 1}, {'answer': 'ugly', 'id' : 2}];
+                var answers = [{'answer': 'pretty', 'id' : 1},{ 'answer' : 'ugly', 'id' : 2 }];
 
                 expect($scope.calculateScore(exercises, answers)).toBe(2);
             });
 
             it('should get a score of 0', function () {
-                var exercises = [{'answer': 'tasd'}, {'answer': 'asdf'}];
-                var answers = ['pretty', 'ugly'];
+                var exercises = [{'answer': 'tasd', 'id' : 1}, {'answer': 'asdf', 'id' : 2}];
+                var answers = [{'answer': 'a', 'id' : 1},{ 'answer' : 'asd', 'id' : 2 }];
 
                 expect($scope.calculateScore(exercises, answers)).toBe(0);
             });

@@ -4,6 +4,7 @@
 angular.module('gameApp', [
     'ngRoute',
     'ngAnimate',
+    'ngMock',
     'gameApp.tests',
     'gameApp.adjective',
     'gameApp.profile',

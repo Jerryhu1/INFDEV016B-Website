@@ -8,7 +8,10 @@ exports.config = {
     ],
 
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'chrome',
+        'chromeOptions': {
+            'args': ['--disable-web-security', '--user-data-dir=~/.e2e-chrome-profile']
+        }
     },
 
     baseUrl: 'http://localhost:8000/',

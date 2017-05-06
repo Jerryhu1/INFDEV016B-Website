@@ -63,8 +63,8 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
                         alert('You passed! |' +
                             'Your score: ' + result.correctAnswers);
                     }
-                }).error(function(result){
-                    console.log("Not logged in ");
+                }).error(function(){
+                    console.log("Not logged in results will not save! Score is: " + $scope.score);
          
                 })
 
@@ -91,18 +91,25 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
             //For mockdata only
             $scope.calculateScore = function(exercises, answers)
             {
-                console.log(exercises);
-                console.log(answers);
+
                 var score = 0;
                 for(var i=0; i<exercises.length; i++)
                 {
                     var exerciseAnswer = exercises[i].answer;
-                    var givenAnswer = answers[i].answer;
-                    if(exerciseAnswer == givenAnswer)
+                    var givenAnswer = "";
+                    if(answers[i] == undefined){
+                        continue;
+                    }
+                    else
                     {
-                        score++;
+                        givenAnswer = answers[i].answer;
+                        if(exerciseAnswer == givenAnswer)
+                        {
+                            score++;
+                        }
                     }
                 }
+                console.log(score);
                 return score;
             };
 
@@ -111,8 +118,6 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
 
                 if(score >= passValue)
                 {
-                    console.log('pass');
-
                     return true;
                 }
                 else {

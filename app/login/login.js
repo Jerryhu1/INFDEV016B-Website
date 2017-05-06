@@ -2,7 +2,8 @@
 
 angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
-    .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', function($rootScope, $scope, UserService) {
+    .controller('LoginCtrl', ['$rootScope', '$httpBackend', '$scope', 'UserService',
+        function($httpBackend, $rootScope, $scope, UserService) {
 
         $scope.user = {};
         $scope.errorMessage = "";
@@ -20,22 +21,12 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
             if($scope.validateFields(credentials)) {
                 UserService.login(credentials)
                     .success(function (result) {
-                        if (result == "Login succesful") {
-                            $rootScope.user = credentials;
-                            $rootScope._id = "586bcfb264f8a31a24e880f0";
-
-                            UserService.getUser("586bcfb264f8a31a24e880f0").success(function (res) {
-                                console.log("Got user!");
-                                console.log(res);
-                                $rootScope.user = res[0];
-                                console.log('Login success!');
-                                return true;
-                            });
-
+                        if (result != null) {
+                            $rootScope.user = result;
+                            return true;
                         }
-                        return true;
                     }).error(function (result) {
-                        $scope.errorMessage = "Invalid credentials! Using mock account";
+                        $scope.errorMessage = "Invalid credentials!";
                         $scope.useMockAccount();
                         return false;
                     }
@@ -59,7 +50,7 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
         $scope.register = function()
         {
-            var credentials = {"email" : $scope.user.email, "password" : $scope.user.password};
+            var credentials = {"email" : $scope.user.email, "password" : $scope.user.password, "level" : "A1"};
 
            if($scope.validateFields(credentials)) {
 
@@ -89,5 +80,34 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
             else{
                 return true;
             }
+        }
+
+        $scope.mockRegistration = function()
+        {
+            var user = {"email" : "intTester@test.com", "password" : "test", "level" : "A1"};
+            var answers = {"userId" : "", "testId" : "", "answers" : []};
+            UserService.register(user).success(function(res){
+
+                TestService.getTestsBylevel(user.level).success(function(res){
+                    angular.forEach(res, function(test){
+                        answers.testId = test._id;
+                        angular.forEach(test.exercises, function(exercise){
+                            answers.answers.push(exercise.answer);
+                        });
+                        TestService.submitAnswers(answers);
+                    });
+                });
+
+                UserService.getUser(res._id).success(function(user){
+
+                    if(user.level == "A1")
+                    {
+                        return true;
+                    }
+                    else {
+                        false;
+                    }
+                });
+            });
         }
     }]);

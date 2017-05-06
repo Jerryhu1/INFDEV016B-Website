@@ -15,20 +15,21 @@
         <div class="categories-container">
             <uib-accordion close-others="oneAtATime">
                 <div uib-accordion-group class="panel-default"
+                     id="adjective-accordion-link"
                      heading="Adjectives or adverb"
                      ng-click="filterTestsByCategory('adjectives')">
-
                     <ul class="testList" >
                             <li ng-repeat="test in tests">
                                 <a ng-href="#!/tests/adjective/{{test._id}}">{{test.name}}</a>
                             </li>
                     </ul>
                 </div>
-                <div uib-accordion-group class="panel-default" heading="Imperatives"
+                <div uib-accordion-group class="panel-default"
+                     heading="Imperatives"
                      ng-click="filterTestsByCategory('imperative')">
                     <ul class="testList" >
                         <li ng-repeat="test in tests">
-                            <a ng-href="#!/tests/imperative/{{test._id}}">{{test.name}}</a>
+                            <a id="imperative-accordion-link" ng-href="#!/tests/imperative/{{test._id}}">{{test.name}}</a>
                         </li>
                     </ul>
                 </div>

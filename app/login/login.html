@@ -6,11 +6,11 @@
             <label>E-mail: <input type="email" ng-model="user.email" /></label><br />
             <label>Password: <input type="password" ng-model="user.password" /></label><br />
 
-            <button ng-click="login()">Login</button>
+            <button ng-click="login()" id="loginBtn">Login</button>
             <button ng-click="register()">Register</button>
 
         </form>
-        <span>{{errorMessage}}</span>
+        <span id ="error-message">{{errorMessage}}</span>
     </div>
 
 

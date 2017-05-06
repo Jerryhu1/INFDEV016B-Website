@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('user.services', [])
-.factory('UserService', ['$http',
-    function($http) {
+.factory('UserService', ['$http', '$httpBackend',
+    function($http, $httpBackend) {
 
         var userService = {};
         $http.defaults.headers.common = { 'api-version' : '0.1.0 '};
@@ -31,7 +31,15 @@ angular.module('user.services', [])
 
         userService.register = function(body){
             return $http.post('http://localhost:3300/users/', body);
-        }
+        };
+
+        userService.getUserByEmail = function(email){
+            return $http.get('http://localhost:3300/users/email/' + email);
+        };
+
+        userService.deleteUser = function(id){
+            return $http.delete('http://localhost:3300/users/' + id);
+        };
         return userService;
     }
 ]);
