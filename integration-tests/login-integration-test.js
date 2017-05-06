@@ -58,6 +58,15 @@ describe('Users unit test', function(){
                     expect(result).toEqual("Login succesfully");
                 })
             });
+            it('should succeed logging in', function(){
+                var loginInfo = {"email" : "jerryhu1@live.nl", "password" : "test"};
+                expect($scope.attemptLogin(loginInfo)).toBeTruthy();
+            });
+
+            it('should fail logging in with wrong credentials', function(){
+                var loginInfo = {"email" : "NaN", "password" : "NaN"};
+                expect($scope.attemptLogin(loginInfo)).toBeFalsy();
+            });
 
 
         })
