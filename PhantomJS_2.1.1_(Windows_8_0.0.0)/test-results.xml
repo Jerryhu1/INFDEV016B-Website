@@ -1,65 +1,64 @@
 <?xml version="1.0"?>
-<testsuite name="PhantomJS 2.1.1 (Windows 8 0.0.0)" package="" timestamp="2017-05-06T13:25:51" id="0" hostname="DESKTOP-BAEKR9T" tests="50" errors="0" failures="0" time="0.234">
+<testsuite name="PhantomJS 2.1.1 (Windows 8 0.0.0)" package="" timestamp="2017-05-07T16:10:46" id="0" hostname="DESKTOP-BAEKR9T" tests="53" errors="0" failures="0" time="0.372">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
   </properties>
-  <testcase name="Test page unit test TestController should have a valid Controller" time="0.026" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController should have a valid exercises list" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController should have a valid scope variable" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should get perfect score" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should get a score of 0" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should not pass the test" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should pass the test" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test Mock Service should have a valid TestService" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test Mock Service should return a list of mock tests" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test Mock Service should return a mock test" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController should have a valid Controller" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController should have a valid exercises list" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should get a score of 1" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should get a score of 0" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should not pass the test" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mockdata testing should pass the test" time="0.016" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test Mock Service should have a valid TestService" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test Mock Service should return a list of mock tests" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test Mock Service should return a mock test" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return a list of tests" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return a mock test by id" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return tests based on a category" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return tests based on a level" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mock with API testing  API test should equal body of mock test" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Login unit test Login controller Login page  should have a valid controller" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should have a valid UserService" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should have a valid rootScope" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should have a valid scope" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should have a valid $scope.user" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should have a valid $scope.errorMessage" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should return false when using empty fields" time="0.007" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should return false when using undefined fields" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should use a valid mock account" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Login unit test Login controller Login page  should return true when fields are not empty" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return a list of tests" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return a mock test by id" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return tests based on a category" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should return tests based on a level" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Adjective page unit test TestController should have a valid Controller" time="0.038" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController should have a valid exercises list" time="0.007" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController should have a valid scope variable" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Mockdata testing should get perfect score" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Mockdata testing should get a score of 0" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Mockdata testing should not pass the test" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Mockdata testing should pass the test" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Mockdata testing should submit tests with user and answers and pass" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Mockdata testing should submit tests with user and answers and fail" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Test Mock Service should have a valid TestService" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Test Mock Service should return a list of mock tests" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Adjective page unit test TestController Test Mock Service should return a mock test" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Adjective page unit test"/>
+  <testcase name="Imperative page unit test TestController should have a valid Controller" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController should have a valid exercises list" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController should have a valid scope variable" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Mockdata testing should get perfect score" time="0.014" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Mockdata testing should get a score of 0" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Mockdata testing should not pass the test" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Mockdata testing should pass the test" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Mockdata testing should submit tests with user and answers and pass" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Mockdata testing should submit tests with user and answers and fail" time="0.008" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Test Mock Service should have a valid TestService" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Test Mock Service should return a list of mock tests" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Imperative page unit test TestController Test Mock Service should return a mock test" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Imperative page unit test"/>
+  <testcase name="Login unit test Login controller Login page  should have a valid controller" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should have a valid UserService" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should have a valid rootScope" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should have a valid scope" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should have a valid $scope.user" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should have a valid $scope.errorMessage" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should return false when using empty fields" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should return false when using undefined fields" time="0.009" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should use a valid mock account" time="0.009" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Login unit test Login controller Login page  should return true when fields are not empty" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return a list of tests" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return a mock test by id" time="0.008" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return tests based on a category" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Test API Service should return tests based on a level" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
   <testcase name="Test page unit test TestController Test API Service should be able to submit answers" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
   <testcase name="Test page unit test TestController Test API Service should not pass a test" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
   <testcase name="Test page unit test TestController Test API Service should pass a test" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Test API Service should level up to A2" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Test page unit test TestController Mock with API testing  API test should equal body of mock test" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
-  <testcase name="Login integration tests TestController UserService API  should return all users" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
-  <testcase name="Login integration tests TestController UserService API  should return a single user by id" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
-  <testcase name="Login integration tests TestController UserService API  should return an empty user" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
-  <testcase name="Login integration tests TestController UserService API  should return an error message" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
-  <testcase name="Login integration tests TestController Login integration  should login successfully" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
-  <testcase name="Login integration tests TestController Login integration  should fail logging in with wrong credentials" time="0.005" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
-  <testcase name="Login integration tests TestController Login integration  should fail registering because of existing account" time="0.004" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Test page unit test TestController Test API Service should level up to A2" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Test page unit test TestController Mock with API testing  API test should equal body of mock test" time="0.007" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
+  <testcase name="Login integration tests TestController UserService API  should return an user" time="0.014" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController UserService API  should return a single user by id" time="0.01" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController UserService API  should return an empty user" time="0.027" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController UserService API  should return an error message" time="0.014" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController Login integration  should login successfully" time="0.009" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController Login integration  should fail logging in with wrong credentials" time="0.008" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController Login integration  should fail registering because of existing account" time="0.007" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController Login integration  should get tests, create a new user and level up to A2" time="0.009" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Login integration tests TestController Login integration  should level up an user" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Login integration tests"/>
+  <testcase name="Test page unit test TestController User Leveling Service should get tests, create a new user and level up to A2" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).Test page unit test"/>
   <system-out>
-    <![CDATA[PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'pass'
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'pass'
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: Object{email: '', password: ''}
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: Object{email: undefined, password: undefined}
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: Object{email: 'test@test.com', password: 'NaN'}
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: Object{email: 'NaN', password: 'NaN'}
+    <![CDATA[PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'OMG1'
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: []
 
 ]]>
   </system-out>

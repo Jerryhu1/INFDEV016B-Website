@@ -52,19 +52,10 @@ describe('Login integration tests', function(){
 
 
             it('should return an user', function () {
-                console.log("OMG1");
-                var test = [];
-                var credentials = {"email" : "jerryhu1@live.nl", "password" : "test"};
                 UserService.getAllUsers().then(function(res){
-                    console.log("In here");
-                    test = res;
-
+                    expect(res).toBeDefined();
                 });
-                //$httpBackend.flush();
-                console.log(test);
-                expect(test).toBeDefined();
 
-                //  $httpBackend.flush();
             });
 
             it('should return a single user by id', function () {

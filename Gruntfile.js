@@ -108,7 +108,7 @@ module.exports = function(grunt){
 
 
     grunt.registerTask('e2e-test', ['connect:test', 'protractor:e2e']);
-    grunt.registerTask('testbuild', ['karma:continuous', 'protractor']);
+    grunt.registerTask('testbuild', ['karma:continuous']);
     grunt.registerTask('cibuild', ['karma:continuous', 'compress' , 'uglify']);
 
 
