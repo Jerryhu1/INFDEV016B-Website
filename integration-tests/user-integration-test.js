@@ -40,12 +40,9 @@ describe('Test page unit test', function(){
                 {"id" : 7, "answer" : "do not feed"}] };
 
             it('should get tests, create a new user and level up to A2', function(){
-                console.log("WTF 1");
                 var user = {"email" : "intTester@test.com", "password" : "test", "level" : "A1"};
                 var answers = {"userId" : "", "testId" : "", "answers" : []};
                 UserService.register(user).success(function(res){
-                    console.log("WTF 2");
-                    console.log(res);
                     TestService.getTestsBylevel(user.level).success(function(res){
                         angular.forEach(res, function(test){
                             answers.testId = test._id;
@@ -57,9 +54,10 @@ describe('Test page unit test', function(){
                     });
 
                     UserService.getUser(res._id).success(function(user){
-                        console.log("WTF 3");
-                        console.log(user);
                         expect(user.level).toEqual("A2");
+                        UserService.deleteUser(user._id).success(function(res){
+
+                        });
                     })
                 });
 

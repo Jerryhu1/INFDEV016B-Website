@@ -2,8 +2,8 @@
 
 angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
-    .controller('LoginCtrl', ['$rootScope', '$httpBackend', '$scope', 'UserService',
-        function($httpBackend, $rootScope, $scope, UserService) {
+    .controller('LoginCtrl', ['$rootScope', '$scope', 'UserService', '$window',
+        function($rootScope, $scope, UserService, $window) {
 
         $scope.user = {};
         $scope.errorMessage = "";
@@ -23,6 +23,8 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
                     .success(function (result) {
                         if (result != null) {
                             $rootScope.user = result;
+                            $window.localStorage.setItem("user", angular.toJson(result));
+                            $scope.errorMessage = "Log in successful!";
                             return true;
                         }
                     }).error(function (result) {
@@ -56,6 +58,7 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
                UserService.register(credentials).success(function (res) {
                    alert('Account succesfully registered with email: ' + res.email);
+
                }).error(function (res) {
                    if (res.code == 11000) {
                        $scope.errorMessage = "This account already exists";
@@ -66,7 +69,6 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
         $scope.validateFields = function(credentials){
             $scope.errorMessage = "";
-            console.log(credentials);
             if(credentials.password == undefined ||credentials.password == "")
             {
                 $scope.errorMessage = "No password inserted";
@@ -100,14 +102,23 @@ angular.module('gameApp.login', ['ngRoute', 'ui.bootstrap'])
 
                 UserService.getUser(res._id).success(function(user){
 
-                    if(user.level == "A1")
+                    if(user.level == "A2")
                     {
-                        return true;
+                        UserService.deleteUser(user._id).success(function(res){
+                            return true;
+                        });
+
                     }
                     else {
-                        false;
+                        return false;
                     }
                 });
             });
+            return true;
+        };
+
+        $scope.logOut = function(){
+
+            $window.localStorage.setItem("user", undefined);
         }
     }]);

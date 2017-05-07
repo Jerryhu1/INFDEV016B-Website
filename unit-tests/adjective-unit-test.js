@@ -1,4 +1,4 @@
-describe('Test page unit test', function(){
+describe('Adjective page unit test', function(){
 
     var UserService, TestService, TestCtrl, $scope, $routeParams, $rootScope, $controller;
 
@@ -73,6 +73,20 @@ describe('Test page unit test', function(){
 
                 var score = 10;
                 expect($scope.checkIfPass(score, 10)).toBeTruthy();
+            });
+
+            it('should submit tests with user and answers and pass', function(){
+                var exercises = [{'answer': 'pretty', 'id' : 1}, {'answer': 'ugly', 'id' : 2}];
+                var answers = ["pretty", "ugly"];
+                var userId = "1";
+                expect($scope.submitMockAnswers(userId, exercises, 0, answers)).toBeTruthy();
+            });
+
+            it('should submit tests with user and answers and fail', function(){
+                var exercises = [{'answer': 'pretty', 'id' : 1}, {'answer': 'ugly', 'id' : 2}];
+                var answers = ["asd", "uglyasd"];
+                var userId = "1";
+                expect($scope.submitMockAnswers(userId, exercises, 2, answers)).toBeFalsy();
             });
         });
 

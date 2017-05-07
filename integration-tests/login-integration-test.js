@@ -4,6 +4,7 @@ describe('Login integration tests', function(){
 
     beforeEach(angular.mock.module('gameApp.login'));
     beforeEach(angular.mock.module('ui.bootstrap'));
+    beforeEach(angular.mock.module('ngMockE2E'));
     beforeEach(angular.mock.module('ngRoute'));
     beforeEach(angular.mock.module('user.services'));
 
@@ -16,7 +17,7 @@ describe('Login integration tests', function(){
             $scope = _$rootScope_.$new();
             $controller = _$controller_;
             UserService = _UserService_;
-            $httpBackend = $injector.get('$httpBackend');
+            $httpBackend = _$httpBackend_;
 
             LoginCtrl = $controller('LoginCtrl', {
                 $scope: $scope,
@@ -30,32 +31,40 @@ describe('Login integration tests', function(){
                 status: 200,
                 data : "data"
             });
-
+            $httpBackend.whenGET("http://localhost:3300/users/:id").passThrough();
+            $httpBackend.whenGET("http://localhost:3300/users/").passThrough();
+            $httpBackend.whenPOST("http://localhost:3300/users/").passThrough();
+            $httpBackend.whenPOST("http://localhost:3300/register/").passThrough();
+            $httpBackend.whenGET("http://localhost:3300/users/email/:email/").passThrough();
+            $httpBackend.whenPOST("http://localhost:3300/login").passThrough();
+            $httpBackend.whenDELETE("http://localhost:3300/users").passThrough();
         }));
 
         afterEach(function() {
+            try{
+                $httpBackend.flush();
+            }catch(e){
 
-            $httpBackend.flush();
-            $httpBackend.verifyNoOutstandingExpectation();
-            $httpBackend.verifyNoOutstandingRequest();
+            }
         });
 
         describe('UserService API ', function() {
 
-            var user = {};
-            $httpBackend.expectGET("localhost:3300/users").respond(200, {});
 
-            it('should return all users', function () {
-
-                inject(function(){
+            it('should return an user', function () {
+                console.log("OMG1");
+                var test = [];
+                var credentials = {"email" : "jerryhu1@live.nl", "password" : "test"};
                 UserService.getAllUsers().then(function(res){
-                    user = res[0];
-                    expect(res.length).toBeGreaterThan(0);
+                    console.log("In here");
+                    test = res;
 
-                    })
-                })
+                });
+                //$httpBackend.flush();
+                console.log(test);
+                expect(test).toBeDefined();
 
-
+                //  $httpBackend.flush();
             });
 
             it('should return a single user by id', function () {
@@ -75,7 +84,6 @@ describe('Login integration tests', function(){
                     expect(res.name).toEqual("Error");
                 });
             });
-
 
         });
 
@@ -102,7 +110,12 @@ describe('Login integration tests', function(){
                 expect($scope.mockRegistration()).toBeTruthy();
 
 
-            })
+            });
+
+            it('should level up an user', function(){
+                expect($scope.mockRegistration()).toBeTruthy();
+            });
+
 
         })
     });

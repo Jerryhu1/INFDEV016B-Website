@@ -1,18 +1,22 @@
 'use strict';
 
 angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
-    .controller('AdjectiveCtrl', ['$rootScope', '$scope' , '$routeParams', 'TestService',
-        function($rootScope, $scope , $routeParams, TestService) {
+    .controller('AdjectiveCtrl', ['$rootScope', '$window', '$scope' , '$routeParams', 'TestService',
+        function($rootScope, $window, $scope,  $routeParams, TestService) {
 
         $scope.exercises = [];
         $scope.answers = [];
         $scope.maxScore;
         $scope.score;
+            try {
+                var user = JSON.parse($window.localStorage.getItem("user"));
+            }catch(e){
+                $scope.errorMessage("You are not logged in!");
+            }
 
             TestService.getTestById($routeParams.testId).success(function(result){
 
                 $scope.test = result[0];
-                console.log($scope.test);
                 exercisesToList();
 
             }).error(function(){
@@ -37,12 +41,12 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
 
                 var count = 1;
 
-                if($rootScope.user == null){
+                if(user == null){
                     alert('You are not logged in tests will not save!');
                 }
 
 
-                var answers = {"userId" : $rootScope.user._id, "testId" : $scope.test._id, "answers" : []};
+                var answers = {"userId" : user._id, "testId" : $scope.test._id, "answers" : []};
 
                 angular.forEach($scope.answers, function(item){
 
@@ -63,6 +67,8 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
                         alert('You passed! |' +
                             'Your score: ' + result.correctAnswers);
                     }
+
+                    $window.location.href = '/#!/tests';
                 }).error(function(){
                     console.log("Not logged in results will not save! Score is: " + $scope.score);
          
@@ -70,22 +76,22 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
 
             };
 
-            $scope.submitMockAnswers = function(userId, exercises, passValue){
+                $scope.submitMockAnswers = function(userId, exercises, passValue, answers){
 
                 var count = 1;
 
-                var answers = {"userId" : userId, "testId" : $scope.test._id, "answers" : []};
+                var answersList = {"userId" : userId,  "answers" : []};
 
-                angular.forEach($scope.answers, function(item){
-
+                angular.forEach(answers, function(item){
                     var answer = {"id" : count, "answer" : item};
-                    answers.answers.push(answer);
+                    answersList.answers.push(answer);
                     count++;
 
                 });
+                $scope.score = $scope.calculateScore($scope.exercises, answersList.answers);
+                $scope.passed = $scope.checkIfPass($scope.score, passValue);
 
-                $scope.score = $scope.calculateScore($scope.exercises, answers.answers);
-                $scope.passed = $scope.checkIfPass(exercises, passValue);
+                return $scope.passed;
             };
 
             //For mockdata only
@@ -109,7 +115,7 @@ angular.module('gameApp.adjective', ['ngRoute', 'ui.bootstrap'])
                         }
                     }
                 }
-                console.log(score);
+
                 return score;
             };
 
