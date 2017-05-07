@@ -3,6 +3,7 @@
   "name" : "Jerry",
   "lastName" : "Hu",
   "password" : "test",
+  "level" : "A1",
   "completedTests" : [
       {
         "testId" : 1,

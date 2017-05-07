@@ -17,7 +17,8 @@ module.exports = function(config) {
             'app/login/login.js',
             './unit-tests/adjective-unit-test.js',
             './unit-tests/imperative-unit-test.js',
-            './unit-tests/login-test.js',
+            './unit-tests/login-unit-test.js',
+            './integration-tests/*.js',
             'app/app.js'
 
         ],

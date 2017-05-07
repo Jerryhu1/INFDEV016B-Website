@@ -1,13 +1,19 @@
 <div ng-controller="LoginCtrl as loginCtrl"  class="container">
 
     <div class="container">
+        <span>Login or Register</span>
         <form novalidate class="simple-form">
             <label>E-mail: <input type="email" ng-model="user.email" /></label><br />
             <label>Password: <input type="password" ng-model="user.password" /></label><br />
 
-            <button ng-click="login()">login</button>
+            <button ng-click="login()" id="loginBtn">Login</button>
+            <button ng-click="logOut()">Log out</button>
+            <button ng-click="register()">Register</button>
+
 
         </form>
-        <span>{{wrongPass}}</span>
+        <span id ="error-message">{{errorMessage}}</span>
     </div>
+
+
 </div>

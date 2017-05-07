@@ -1,4 +1,4 @@
-describe('Test page unit test', function(){
+describe('Adjective page unit test', function(){
 
     var UserService, TestService, TestCtrl, $scope, $routeParams, $rootScope, $controller;
 
@@ -29,6 +29,9 @@ describe('Test page unit test', function(){
 
         }));
 
+
+
+
         it('should have a valid Controller', function(){
             expect($controller).toBeDefined();
         });
@@ -38,18 +41,23 @@ describe('Test page unit test', function(){
             expect($scope.exercises).toBeDefined();
         });
 
+        it('should have a valid scope variable', function(){
+            expect($scope).toBeDefined();
+        });
+
+
         describe('Mockdata testing', function() {
 
             it('should get perfect score', function () {
-                var exercises = [{'answer': 'pretty'}, {'answer': 'ugly'}];
-                var answers = ['pretty', 'ugly'];
+                var exercises = [{'answer': 'pretty', 'id' : 1}, {'answer': 'ugly', 'id' : 2}];
+                var answers = [{'answer': 'pretty', 'id' : 1},{ 'answer' : 'ugly', 'id' : 2 }];
 
                 expect($scope.calculateScore(exercises, answers)).toBe(2);
             });
 
             it('should get a score of 0', function () {
-                var exercises = [{'answer': 'tasd'}, {'answer': 'asdf'}];
-                var answers = ['pretty', 'ugly'];
+                var exercises = [{'answer': 'tasd', 'id' : 1}, {'answer': 'asdf', 'id' : 2}];
+                var answers = [{'answer': 'a', 'id' : 1},{ 'answer' : 'asd', 'id' : 2 }];
 
                 expect($scope.calculateScore(exercises, answers)).toBe(0);
             });
@@ -65,6 +73,20 @@ describe('Test page unit test', function(){
 
                 var score = 10;
                 expect($scope.checkIfPass(score, 10)).toBeTruthy();
+            });
+
+            it('should submit tests with user and answers and pass', function(){
+                var exercises = [{'answer': 'pretty', 'id' : 1}, {'answer': 'ugly', 'id' : 2}];
+                var answers = ["pretty", "ugly"];
+                var userId = "1";
+                expect($scope.submitMockAnswers(userId, exercises, 0, answers)).toBeTruthy();
+            });
+
+            it('should submit tests with user and answers and fail', function(){
+                var exercises = [{'answer': 'pretty', 'id' : 1}, {'answer': 'ugly', 'id' : 2}];
+                var answers = ["asd", "uglyasd"];
+                var userId = "1";
+                expect($scope.submitMockAnswers(userId, exercises, 2, answers)).toBeFalsy();
             });
         });
 
@@ -84,91 +106,6 @@ describe('Test page unit test', function(){
 
         });
 
-        describe('Test API Service', function(){
 
-            it('should return a list of tests', function(){
-                expect(TestService.getAllTests()).not.toEqual(0);
-            });
-
-            it('should return a mock test by id', function(){
-                expect(TestService.getTestById("586bcfb264f8a31a24e880f0")).not.toEqual(null);
-            });
-
-            it('should return tests based on a category', function(){
-                expect(TestService.getAllTestsByCategory('adjectives')).not.toEqual(null);
-            });
-            it('should return tests based on a level', function(){
-                expect(TestService.getAllTestsByLevel('A1')).not.toEqual(null);
-            });
-
-            var incorrectAnswers = {
-                "userId" : "586bcfb264f8a31a24e880f0",
-                "testId" : "586bc3db64f8a31a24e880ef",
-                "answers" : []
-            };
-
-
-            var correctAnswers = {"userId" : "586bcfb264f8a31a24e880f0", "testId" : "586bc3db64f8a31a24e880ef", "answers" :
-                [{"id" : 1, "answer" : "go"},
-                {"id" : 2, "answer" : "do not swim"},
-                {"id" : 3, "answer" : "do"},
-                {"id" : 4, "answer" : "do not play"},
-                {"id" : 5, "answer" : "brush"},
-                {"id" : 6, "answer" : "do not talk"},
-                {"id" : 7, "answer" : "do not feed"}] };
-            var correctAnswers2 = {"userId" : "586bcfb264f8a31a24e880f0", "testId" : "586e41624151f02b642a5e6e", "answers" : [
-                {"id" : 1, "answer" : "go"},
-                {"id" : 2, "answer" : "do not swim"},
-                {"id" : 3, "answer" : "do"},
-                {"id" : 4, "answer" : "do not play"},
-                {"id" : 5, "answer" : "brush"},
-                {"id" : 6, "answer" : "do not talk"},
-                {"id" : 7, "answer" : "do not feed"}] };
-
-            it('should be able to submit answers', function(){
-                TestService.submitAnswers(incorrectAnswers).success(function(result){
-                    expect(result).not.toEqual(null);
-                })
-            });
-            it('should not pass a test', function(){
-                TestService.submitAnswers(incorrectAnswers).success(function(result){
-                    expect(result.passed).toBeFalsy();
-                })
-            });
-            it('should pass a test', function(){
-                TestService.submitAnswers(correctAnswers).success(function(result){
-                    expect(result.passed).toBeTruthy();
-                });
-            });
-            it('should level up to A2', function(){
-
-                TestService.submitAnswers(correctAnswers);
-                TestService.submitAnswers(correctAnswers2);
-
-                UserService.getUser("586bcfb264f8a31a24e880f0").success(function(result){
-                    expect(result.level).toEqual("A2");
-                })
-            })
-        });
-
-        describe('Mock with API testing', function(){
-
-            it(' API test should equal body of mock test', function(){
-
-                var apiTest, mockTest;
-                TestService.getAllTests().success(function(result){
-                    apiTest = result[0];
-
-                    TestService.getMockTest().success(function(result){
-                        mockTest = result;
-
-                    });
-                    expect(apiTest.exercises).toEqual(mockTest.exercises);
-                });
-
-
-
-            });
-        })
     })
 });
