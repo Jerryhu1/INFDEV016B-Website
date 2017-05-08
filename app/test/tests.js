@@ -11,7 +11,7 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
         try {
             var user = JSON.parse($window.localStorage.getItem("user"));
         }catch(e){
-            $scope.warning("You are not logged in!");
+            $scope.warning = "You are not logged in!"
         }
 
 
@@ -114,15 +114,17 @@ angular.module('gameApp.tests', ['ngRoute', 'ui.bootstrap'])
 
         $scope.checkIfDone = function(test)
         {
-            TestService.getTestResults(test._id, user._id).success(function(res){
-               if(angular.isDefined(res[res.length-1])) {
+            if(user) {
+                TestService.getTestResults(test._id, user._id).success(function (res) {
+                    if (angular.isDefined(res[res.length - 1])) {
 
-                    test["date"] = res[res.length-1].date;
-                    test["score"] = res[res.length-1].correctAnswers;
-               }
-            }).error(function(res){
-                console.log("Test not yet done");
-            });
+                        test["date"] = res[res.length - 1].date;
+                        test["score"] = res[res.length - 1].correctAnswers;
+                    }
+                }).error(function (res) {
+                    console.log("Test not yet done");
+                });
+            }
            return test;
         };
 
